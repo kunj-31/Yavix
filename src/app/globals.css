@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0066ff;
+  --primary-dark: #003ab3;
+  --primary-light: #e8f4ff;
+  --accent: #00d4ff;
+  --text-primary: #0a0f1e;
+  --text-secondary: #4a5568;
+  --bg-white: #ffffff;
+  --bg-subtle: #f7faff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-primary);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #003ab3; }
+
+/* Selection */
+::selection { background: rgba(0, 102, 255, 0.15); color: #0066ff; }
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-blue {
+  background: rgba(0, 102, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 102, 255, 0.15);
+}
+
+/* Blue glow text */
+.text-glow {
+  text-shadow: 0 0 30px rgba(0, 102, 255, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0066ff 0%, #00aaff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shine overlay effect */
+.shine-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.shine-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-15deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%   { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Floating particle dots */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 102, 255, 0.3);
+  animation: float-particle linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float-particle {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  50%  { transform: translateY(-40px) translateX(10px) scale(1.1); opacity: 0.9; }
+  100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+}
+
+/* Before/After CSS filter effects */
+.panel-dirty {
+  filter: sepia(0.7) saturate(0.4) brightness(0.75) contrast(1.1);
+}
+
+.panel-dirty-overlay {
+  background: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, rgba(139,90,43,0.4) 0%, rgba(101,67,33,0.3) 50%, rgba(139,90,43,0.4) 100%);
+  mix-blend-mode: multiply;
+}
+
+.panel-clean {
+  filter: brightness(1.08) saturate(1.2) contrast(1.05);
+}
+
+/* Section padding utility */
+.section-pad {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 64px 0;
+  }
+}
+
+/* Scroll reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Auto-scroll animation */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 28s linear infinite;
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
+
+/* Wash animation for before/after */
+@keyframes wash-sweep {
+  0%   { transform: translateX(-100%) skewX(-5deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(200%) skewX(-5deg); opacity: 0; }
+}
+
+.animate-wash {
+  animation: wash-sweep 1.5s ease-in-out forwards;
+}
+
+/* Number counter animation */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count {
+  animation: count-up 0.6s ease-out forwards;
+}

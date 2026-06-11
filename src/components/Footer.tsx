@@ -1,68 +1,64 @@
 import Link from "next/link";
 import { Zap, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { footer, label } from "framer-motion/client";
 
 const WA_NUMBER = "919274371058";
-const WA_MSG    = encodeURIComponent("Hello Yavix Energy! I'd like to get a solar cleaning quote.");
+const WA_MSG = encodeURIComponent("Hello Yavix Energy! I'd like to get a solar cleaning quote.");
 
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
           {/* ── Brand ── */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center shadow">
-                <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
-              </div>
-              <div>
-                <span className="block text-[14px] font-extrabold text-primary-900">Yavix Energy</span>
-                <span className="block text-[10px] text-primary-500 tracking-widest uppercase">Solar Cleaning Experts</span>
-              </div>
-            </div>
-            <p className="text-sm text-gray-500 leading-relaxed">
-              Ahmedabad&rsquo;s most trusted solar panel cleaning company. We restore efficiency with professional cleaning, maintenance, and care for homes, offices, and industries.
+          <div className="md:col-span-4 lg:col-span-4 mb-6 pr-6">
+            <Link href="/" className="flex items-center mb-2">
+              <img src="/logos/Logo.png" alt="Yavix Solar Cleaning" className="h-14 w-auto object-contain" />
+            </Link>
+
+            <p className="text-[14px] text-gray-600 leading-7 text-justify">
+              Ahmedabad's most trusted solar panel cleaning company. As dedicated professional solar panel cleaning specialists, we restore efficiency and maximize energy output through expert cleaning services for residential, commercial, and industrial properties.
             </p>
-            <div className="flex items-center gap-3 mt-5">
-              <a
-                href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-green-500 flex items-center justify-center text-white hover:bg-green-600 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.062 5.248 5.308 0 11.77 0c3.13 0 6.073 1.22 8.285 3.435 2.21 2.215 3.428 5.16 3.424 8.29-.007 6.523-5.253 11.77-11.716 11.77-2.007 0-3.978-.515-5.727-1.498L0 24zm6.59-4.846c1.62.962 3.21 1.454 4.966 1.455 5.349 0 9.701-4.329 9.707-9.682.003-2.593-1.003-5.032-2.834-6.865-1.83-1.833-4.264-2.843-6.858-2.843-5.352 0-9.701 4.33-9.707 9.684-.001 1.838.48 3.593 1.392 5.155l-.979 3.573 3.659-.958zm12.308-5.367c-.211-.106-1.252-.618-1.448-.689-.196-.072-.34-.107-.482.106-.143.213-.553.689-.678.831-.125.143-.25.16-.462.054-.212-.107-.894-.33-1.703-1.053-.63-.562-1.055-1.257-1.179-1.47-.124-.213-.013-.328.093-.433.096-.095.212-.248.318-.372.106-.124.142-.213.213-.356.071-.142.035-.266-.017-.372-.054-.107-.482-1.16-.66-1.597-.173-.418-.363-.36-.498-.367-.129-.007-.277-.008-.426-.008-.149 0-.393.056-.599.28-.206.225-.785.767-.785 1.87 0 1.104.8 2.17.912 2.325.112.155 1.573 2.401 3.811 3.37.532.23 1.01.385 1.353.495.534.17 1.02.146 1.405.088.429-.064 1.252-.511 1.429-1.004.178-.492.178-.915.125-1.004-.053-.089-.196-.142-.408-.249z" />
-                </svg>
-              </a>
-              <a
-                href="tel:09274371058"
-                className="w-9 h-9 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:bg-primary-600 transition-colors"
-                aria-label="Call"
-              >
-                <Phone className="w-4 h-4" />
-              </a>
-            </div>
+          </div>
+
+          {/* ── Services ── */}
+          <div className="md:col-span-3 lg:col-span-3 mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Services
+            </h3>
+            <ul className="space-y-3">
+              {[
+                "Residential Solar Cleaning",
+                "Commercial Solar Cleaning",
+                "Industrial Solar Cleaning",
+                "Utility-Scale Solar Farm Cleaning",
+                "Salt & Mineral Deposit Removal",
+                "Annual Cleaning Contracts (ACC)"
+              ].map((s) => (
+                <li key={s}>
+                  <Link href="/#services" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                    {s}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* ── Quick Links ── */}
-          <div>
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">Quick Links</h3>
+          <div className="md:col-span-2 lg:col-span-2 mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {[
-                { label: "Home",        href: "/" },
-                { label: "About",       href: "/about" },
-                { label: "Shop Now",    href: "/shop" },
-                { label: "Case Study",  href: "/case-study" },
-                { label: "Blogs",       href: "/blogs" },
-                { label: "Contact",     href: "/contact" },
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Products", href: "/products" },
+                { label: "Case Studies", href: "/case-study" },
+                { label: "Blogs", href: "/blogs" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="text-sm text-gray-500 hover:text-primary-600 transition-colors"
-                  >
+                  <Link href={l.href} className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -70,76 +66,57 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ── Services ── */}
-          <div>
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">Services</h3>
-            <ul className="space-y-3">
-              {[
-                "Residential Cleaning",
-                "Commercial Cleaning",
-                "Industrial Cleaning",
-                "Panel Inspection",
-                "Annual Maintenance",
-                "Emergency Service",
-              ].map((s) => (
-                <li key={s}>
-                  <span className="text-sm text-gray-500">{s}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* ── Contact Info ── */}
-          <div>
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">Contact</h3>
+          <div className="md:col-span-3 lg:col-span-3 mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Contact Us
+            </h3>
             <ul className="space-y-4">
-              <li className="flex gap-3">
-                <MapPin className="w-4 h-4 text-primary-500 mt-0.5 shrink-0" />
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-primary-500 shrink-0" />
+                <a href="tel:+919274371058" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                  +91 92743 71058
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-primary-500 shrink-0" />
+                <a href="mailto:yavixenergy@gmail.com" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                  yavixenergy@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-primary-500 mt-1 shrink-0" />
                 <span className="text-sm text-gray-500 leading-relaxed">
-                  36, Thakkarnagar Rd, near Sahjanand Hospital,<br />
-                  Bhagyoday Society, Thakkarbapanagar,<br />
+                  36, Bhagyoday Society, Thakkarbapanagar Road, <br />
                   Ahmedabad, Gujarat 382350
                 </span>
               </li>
-              <li className="flex gap-3 items-center">
-                <Phone className="w-4 h-4 text-primary-500 shrink-0" />
-                <a href="tel:09274371058" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
-                  09274371058
+              <li className="flex items-center gap-2 mt-4">
+                <a href="https://facebook.com/profile.php?id=61574586806347" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" className="w-8 h-8" />
                 </a>
-              </li>
-              <li className="flex gap-3 items-center">
-                <Mail className="w-4 h-4 text-primary-500 shrink-0" />
-                <a href="mailto:info@yavixenergy.com" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
-                  info@yavixenergy.com
+                <a href="https://www.instagram.com/yavix_solarcleaning" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" className="w-8 h-8" />
                 </a>
-              </li>
-              <li className="flex gap-3 items-center">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-green-500 shrink-0">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.062 5.248 5.308 0 11.77 0c3.13 0 6.073 1.22 8.285 3.435 2.21 2.215 3.428 5.16 3.424 8.29-.007 6.523-5.253 11.77-11.716 11.77-2.007 0-3.978-.515-5.727-1.498L0 24zm6.59-4.846c1.62.962 3.21 1.454 4.966 1.455 5.349 0 9.701-4.329 9.707-9.682.003-2.593-1.003-5.032-2.834-6.865-1.83-1.833-4.264-2.843-6.858-2.843-5.352 0-9.701 4.33-9.707 9.684-.001 1.838.48 3.593 1.392 5.155l-.979 3.573 3.659-.958zm12.308-5.367c-.211-.106-1.252-.618-1.448-.689-.196-.072-.34-.107-.482.106-.143.213-.553.689-.678.831-.125.143-.25.16-.462.054-.212-.107-.894-.33-1.703-1.053-.63-.562-1.055-1.257-1.179-1.47-.124-.213-.013-.328.093-.433.096-.095.212-.248.318-.372.106-.124.142-.213.213-.356.071-.142.035-.266-.017-.372-.054-.107-.482-1.16-.66-1.597-.173-.418-.363-.36-.498-.367-.129-.007-.277-.008-.426-.008-.149 0-.393.056-.599.28-.206.225-.785.767-.785 1.87 0 1.104.8 2.17.912 2.325.112.155 1.573 2.401 3.811 3.37.532.23 1.01.385 1.353.495.534.17 1.02.146 1.405.088.429-.064 1.252-.511 1.429-1.004.178-.492.178-.915.125-1.004-.053-.089-.196-.142-.408-.249z" />
-                </svg>
-                <a
-                  href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-gray-500 hover:text-green-600 transition-colors"
-                >
-                  WhatsApp Us
+                <a href="https://www.youtube.com/@YavixSolar" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" className="w-8 h-8" />
+                </a>
+                <a href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-8 h-8" />
                 </a>
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* ── Bottom Bar ── */}
-        <div className="mt-12 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-gray-400">
-            © {new Date().getFullYear()} Yavix Energy – Solar Cleaning Experts. All rights reserved.
-          </p>
-          <p className="text-[13px] text-gray-400">
-            Ahmedabad, Gujarat, India &middot; Open 24 Hours
+        <div className="mt-12 pt-6 border-t border-gray-200 flex justify-start items-center">
+          <p className="text-xs sm:text-sm text-gray-400 text-left">
+            © 2026 Yavix Solar Cleaning. All Rights Reserved.
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 }

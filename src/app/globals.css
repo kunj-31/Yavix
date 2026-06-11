@@ -37,8 +37,8 @@ body {
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #0066ff; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #003ab3; }
+::-webkit-scrollbar-thumb { background: #ffffff; border-radius: 3px; border: 1px solid #e2e8f0; }
+::-webkit-scrollbar-thumb:hover { background: #f0f4f8; border: 1px solid #cbd5e1; }
 
 /* Selection */
 ::selection { background: rgba(0, 102, 255, 0.15); color: #0066ff; }

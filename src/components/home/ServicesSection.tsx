@@ -1,100 +1,243 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Award, ShieldCheck, HelpCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Home,
+  Building2,
+  Factory,
+  Sun,
+  Droplets,
+  ClipboardCheck,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Zap,
+  Check,
+  ArrowRight,
+  ShieldCheck
+} from "lucide-react";
 
-const services = [
+interface ServiceStat {
+  label: string;
+  value: string;
+}
+
+interface Service {
+  id: string;
+  title: string;
+  shortDesc: string;
+  longDesc: string;
+  image: string;
+  icon: React.ComponentType<any>;
+  scope: string;
+  type: string;
+  features: string[];
+  stats: ServiceStat[];
+  waMsg: string;
+}
+
+const services: Service[] = [
   {
-    image: "/images/services/service-1-panel.png",
-    title: "Solar Panel Servicing",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
-  },
-  {
-    image: "/images/services/service-2-system.png",
-    title: "Solar System Servicing",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
-  },
-  {
-    image: "/images/services/service-3-array.png",
-    title: "Solar Array Maintenance",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
-  },
-  {
-    image: "/images/services/service-4-repair.png",
-    title: "Photovoltaic Panel Repair",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
-  },
-  {
-    image: "/images/services/service-5-system-repair.png",
-    title: "Solar Energy System Repair",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
-  },
-  {
+    id: "residential",
+    title: "Residential Solar Cleaning",
+    shortDesc: "House Rooftops • Flats • Apartments • Residential Societies • Villas • Farmhouses • Bungalows",
+    longDesc: "Residential solar panels are exposed to dust, bird droppings, pollen, pollution, hard water stains and mineral deposits that can reduce energy generation over time. Our professional cleaning service uses specialized equipment and safe, industry-approved methods to remove contaminants and restore optimal performance.  \n\n Whether installed on a house, villa, bungalow, apartment, residential society, row house or farmhouse, we help maximize efficiency and protect your investment.",
     image: "/images/services/service-6-residential.png",
-    title: "Residential Solar Panel Maintenance",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
+    icon: Home,
+    scope: "",
+    type: "",
+    features: [
+      "Professional cleaning using specialized solar cleaning equipment",
+      "Safe cleaning methods with no standing on solar panels",
+      "Removal of dust, bird droppings and environmental buildup",
+      "Soft-bristle brushes for scratch-free cleaning",
+      "Safe telescopic pole cleaning for hard-to-reach panels",
+      "Performance-focused cleaning to help maintain maximum efficiency"
+    ],
+    stats: [],
+    waMsg: "Hello Yavix Energy! I'd like to book a Residential Solar Cleaning service."
   },
   {
+    id: "commercial",
+    title: "Commercial Solar Cleaning",
+    shortDesc: "Office Buildings • Shopping Complexes • Schools • Colleges • Hospitals • Hotels • Business Parks",
+    longDesc: "Commercial solar installations are a valuable investment, but dirt, pollution, bird droppings, hard water stains and mineral deposits can reduce energy output over time. Our professional cleaning service helps maintain maximum solar performance and operational efficiency through safe, performance-focused cleaning. \n\n From office buildings and shopping complexes to schools, hospitals, hotels and corporate campuses, our experienced team provides reliable cleaning with minimal disruption, helping your solar assets perform at their full potential.",
+    image: "/images/services/service-2-system.png",
+    icon: Building2,
+    scope: "",
+    type: "Enterprise Maintenance",
+    features: [
+      "Professional cleaning using specialized solar cleaning equipment",
+      "Safe cleaning methods with no standing on solar panels",
+      "Removal of dust, dirt, bird droppings and surface buildup",
+      "Flexible scheduling around business operations",
+      "Minimal disruption to daily business operations",
+      "Performance-focused cleaning to help maintain maximum efficiency"
+    ],
+    stats: [],
+    waMsg: "Hello Yavix Energy! I'd like to book a Commercial Solar Cleaning service."
+  },
+  {
+    id: "industrial",
+    title: "Industrial Solar Cleaning",
+    shortDesc: "Factories • Manufacturing Plants • Warehouses • Industrial Parks • Logistics Centers • Processing Units.",
+    longDesc: "Industrial solar installations operate in demanding environments where dust, manufacturing residues, airborne particles, hard water stains and mineral deposits can quickly accumulate on solar panels, reducing energy production and efficiency. Our professional cleaning service uses specialized equipment and proven methods to help maintain optimal performance. \n\n Whether installed on factories, warehouses, industrial parks, logistics hubs or processing units, we help protect your investment and maximize energy generation.",
+    image: "/images/services/service-3-array.png",
+    icon: Factory,
+    scope: "Factories & Warehouses",
+    type: "Heavy Duty Cleaning",
+    features: [
+      "Professional equipment for demanding environments",
+      "Removal of heavy dust and industrial buildup",
+      "No standing or walking on solar panels",
+      "Safe cleaning for large rooftop installations",
+      "Scalable solutions for large solar capacities",
+      "Helps maximize return on solar investment"
+    ],
+    stats: [
+    ],
+    waMsg: "Hello Yavix Energy! I'd like to book an Industrial Solar Cleaning service."
+  },
+  {
+    id: "utility",
+    title: "Utility-Scale Solar Farm Cleaning",
+    shortDesc: "Solar Farms • Ground-Mounted Plants • Solar Parks • IPP Projects • Open Access Plants • Captive Power Plants",
+    longDesc: "Utility-scale solar farms depend on clean panels to achieve maximum energy production and plant performance. Dust, environmental contaminants, hard water stains and mineral deposits can reduce generation across large installations. Our professional cleaning service uses efficient large-scale cleaning methods to help maintain optimal energy yield.\n\nWhether serving solar farms, solar parks, ground-mounted plants, utility projects, open access plants or captive power plants, we help maximize energy generation and protect solar assets.",
     image: "/images/services/service-7-renewable.png",
-    title: "Renewable Energy Panel Repair",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
+    icon: Sun,
+    scope: "Multi-Megawatt Solar Farms",
+    type: "Large-Scale Operations",
+    features: [
+      "Specialized cleaning for large-scale solar farms",
+      "Safe cleaning methods for ground-mounted installations",
+      "High-capacity cleaning for large panel volumes",
+      "Removal of dust, dirt, and environmental buildup",
+      "Efficient cleaning for utility-scale solar assets",
+      "Helps maximize energy yield and plant performance"
+    ],
+    stats: [
+    ],
+    waMsg: "Hello Yavix Energy! I'd like to book a Utility-Scale Solar Farm Cleaning service."
   },
   {
-    image: "/images/services/service-8-trouble.png",
-    title: "PV Panel Troubleshooting",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
+    id: "salt-mineral",
+    title: "Specialized Salt & Mineral Deposit Removal",
+    shortDesc: "Salt Deposits • Mineral Scaling • Hard Water Stains • Coastal Sites • Industrial Sites • Performance Recovery",
+    longDesc: "Salt and mineral deposits are among the most stubborn contaminants found on solar panels. Caused by coastal environments, industrial emissions, hard water exposure, or sprinkler systems, these deposits can reduce light transmission and lower energy generation over time.\n\nOur specialized cleaning service safely removes salt deposits, mineral scaling and hard water stains using proven techniques and professional equipment. We never stand on panels or use abrasive methods, helping protect your investment and maximize solar performance.",
+    image: "/images/services/service-1-panel.png",
+    icon: Droplets,
+    scope: "Coastal & Hard-Water Regions",
+    type: "Advanced Restoration",
+    features: [
+      "Removal of stubborn salt and mineral deposits",
+      "Treatment of hard water stains and mineral scaling",
+      "Safe cleaning without abrasive scrub pads or harsh chemicals",
+      "No standing or walking directly on solar panels",
+      "Specialized techniques for challenging surface deposits",
+      "Helps restore solar performance affected by buildup"
+    ],
+    stats: [
+    ],
+    waMsg: "Hello Yavix Energy! I'd like to book a Specialized Salt & Mineral Deposit Removal service."
   },
   {
-    image: "/images/services/service-9-general.png",
-    title: "Solar Panel Repair & Services",
-    price: "Request for Price",
-    type: "Repair & Maintenance",
-    scope: "Residential & Commercial",
+    id: "acc",
+    title: "Annual Cleaning Contracts (ACC)",
+    shortDesc: "Monthly Plans • Quarterly Plans • Scheduled Cleaning • Priority Service • Multi-Site Coverage • Annual Agreements",
+    longDesc: "Annual Cleaning Contracts (ACC) provide a scheduled and hassle-free solution to keep solar systems operating at peak performance year-round. Our customized cleaning plans help prevent the buildup of dust, dirt, bird droppings, hard water stains and mineral deposits that can reduce energy generation.\n\nSuitable for residential, commercial, industrial and utility-scale installations, our ACC services include scheduled visits and professional cleaning practices to maximize energy production, improve long-term performance and protect your solar investment.",
+    image: "/images/services/service-5-system-repair.png",
+    icon: ClipboardCheck,
+    scope: "All Solar Installations",
+    type: "Contractual Maintenance",
+    features: [
+      "Scheduled monthly, quarterly, or custom cleaning plans",
+      "Priority service with planned visit scheduling",
+      "Consistent year-round solar system performance",
+      "Reduced accumulation of dust, dirt, and mineral deposits",
+      "Flexible maintenance plans for all system sizes",
+      "Helps maintain maximum efficiency and return on investment (ROI)"
+    ],
+    stats: [
+    ],
+    waMsg: "Hello Yavix Energy! I'd like to learn more about the Annual Maintenance Contracts (AMC)."
   },
 ];
 
 export default function ServicesSection() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [showLeftBtn, setShowLeftBtn] = useState(false);
+  const [showRightBtn, setShowRightBtn] = useState(true);
+  const [containerNode, setContainerNode] = useState<HTMLDivElement | null>(null);
 
   const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, clientWidth } = scrollContainerRef.current;
-      const scrollAmount = 340; // Card width (300px) + gap (40px)
+    if (containerNode) {
+      const { scrollLeft } = containerNode;
+      const scrollAmount = 352; // Card width (320px) + gap (32px)
       const targetScroll =
         direction === "left"
           ? scrollLeft - scrollAmount
           : scrollLeft + scrollAmount;
-      
-      scrollContainerRef.current.scrollTo({
+
+      containerNode.scrollTo({
         left: targetScroll,
         behavior: "smooth",
       });
     }
   };
 
+  const handleScroll = () => {
+    if (containerNode) {
+      const { scrollLeft, scrollWidth, clientWidth } = containerNode;
+      setShowLeftBtn(scrollLeft > 10);
+      setShowRightBtn(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    if (containerNode) {
+      containerNode.addEventListener("scroll", handleScroll, { passive: true });
+      window.addEventListener("resize", handleScroll);
+
+      const timer = setTimeout(handleScroll, 100);
+      return () => {
+        containerNode.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleScroll);
+        clearTimeout(timer);
+      };
+    }
+  }, [containerNode]);
+
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedService]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedService(null);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <section id="services" className="py-24 bg-[#f8fafc] border-y border-gray-100 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="mb-16 text-center flex flex-col items-center">
+      {/* Decorative ambient backgrounds */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-glow pointer-events-none opacity-40 rounded-full" />
+      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-blue-glow pointer-events-none opacity-30 rounded-full" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header - Centered */}
+        <div className="mb-20 text-center flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,30 +249,34 @@ export default function ServicesSection() {
               OUR SERVICES
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mt-2">
-              Solar Repair &amp; <span className="text-primary-600">Maintenance Services</span>
+              <span className="text-primary-600">Professional </span>Solar Panel Cleaning
             </h2>
+            <p>
+              Maximize energy output, extend panel life and protect your solar investment with expert cleaning services.
+            </p>
           </motion.div>
-          <p className="text-[16px] sm:text-[18px] text-gray-500 leading-relaxed font-semibold max-w-3xl mx-auto mt-4">
-            Maximize your solar generation efficiency with Yavix&apos;s certified technical engineering services.
-          </p>
         </div>
 
-        {/* Relative Container for Slider and floating buttons */}
-        <div className="relative group">
-          
-          {/* Floating Left Button */}
+        {/* Slider Wrapper with side padding for buttons */}
+        <div className="relative px-0 sm:px-14">
+
+          {/* Floating Left Button - positioned outside on the left side of the slider */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-2 lg:-left-6 top-[35%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-gray-150 bg-white/95 backdrop-blur-sm flex items-center justify-center text-primary-900 hover:bg-primary-50 hover:border-primary-200 transition-all shadow-md active:scale-95 hidden md:flex"
+            className={`absolute left-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${showLeftBtn ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
+              }`}
+            style={{ transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)" }}
             aria-label="Scroll left"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          {/* Floating Right Button */}
+          {/* Floating Right Button - positioned outside on the right side of the slider */}
           <button
             onClick={() => scroll("right")}
-            className="absolute right-2 lg:-right-6 top-[35%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-gray-150 bg-white/95 backdrop-blur-sm flex items-center justify-center text-primary-900 hover:bg-primary-50 hover:border-primary-200 transition-all shadow-md active:scale-95 hidden md:flex"
+            className={`absolute right-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${showRightBtn ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
+              }`}
+            style={{ transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)" }}
             aria-label="Scroll right"
           >
             <ChevronRight className="w-5 h-5" />
@@ -137,50 +284,198 @@ export default function ServicesSection() {
 
           {/* Horizontal Scrollable Container */}
           <div
-            ref={scrollContainerRef}
-            className="flex gap-8 overflow-x-auto pb-8 scroll-smooth scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 snap-x snap-mandatory"
+            ref={setContainerNode}
+            className="flex gap-8 overflow-x-auto pb-8 scroll-smooth scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {services.map((s, i) => (
-              <motion.div
-                key={s.title}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-                whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(0, 102, 255, 0.15)" }}
-                className="w-[300px] shrink-0 snap-start rounded-3xl bg-white border border-gray-100 shadow-sm p-5 transition-all duration-300 hover:border-primary-200 group text-center flex flex-col justify-between"
-              >
-                <div>
-                  {/* 4:3 Aspect Ratio Local Image */}
-                  <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 relative shadow-md group-hover:scale-[1.02] transition-transform duration-300">
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  whileHover={{ y: -8, boxShadow: "0 20px 40px -15px rgba(0, 102, 255, 0.12)" }}
+                  onClick={() => setSelectedService(service)}
+                  className="w-[320px] shrink-0 snap-start bg-white border border-slate-100 rounded-3xl p-5 hover:border-primary-200 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Service Image at Top (Clean, no buttons/icons on it) */}
+                    <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 relative shadow-sm group-hover:scale-[1.01] transition-transform duration-300 bg-slate-50">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Icon container (Moved completely outside the image) */}
+                    <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 mb-4 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                      <IconComponent className="w-5 h-5" />
+                    </div>
+
+                    {/* Full text wrapper, no line-clamps to prevent cut-off */}
+                    <h3 className="font-extrabold text-[18px] text-slate-900 leading-snug mb-2.5 group-hover:text-primary-600 transition-colors">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-[13.5px] text-slate-500 font-medium leading-relaxed mb-5">
+                      {service.shortDesc}
+                    </p>
                   </div>
 
-                  {/* Service Details centered */}
-                  <h3 className="font-extrabold text-[16.5px] text-primary-900 leading-snug mb-3 group-hover:text-primary-600 transition-colors min-h-[48px] flex items-center justify-center">
-                    {s.title}
-                  </h3>
-
-                  {/* Service Tags - Centered inline pills without Type and Scope labels */}
-                  <div className="flex flex-wrap items-center justify-center gap-2 border-t border-gray-100 pt-4">
-                    <span className="px-3 py-1 rounded-full bg-primary-50 text-primary-600 text-[11px] font-semibold border border-primary-100/50">
-                      Repair &amp; Maintenance
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-gray-50 text-gray-600 text-[11px] font-semibold border border-gray-100">
-                      Residential &amp; Commercial
+                  <div className="flex items-center justify-between border-t border-slate-50 pt-4 mt-auto">
+                    <span className="inline-flex items-center gap-1 text-[12.5px] font-extrabold text-primary-500 group-hover:text-primary-600 transition-colors">
+                      Learn More
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Navigation Slide-in Details Modal */}
+      <AnimatePresence>
+        {selectedService && (
+          <div className="fixed inset-0 z-50 flex justify-end overflow-hidden">
+            {/* Backdrop with blur */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedService(null)}
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs"
+            />
+
+            {/* Sliding Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 26, stiffness: 220 }}
+              className="relative w-full max-w-3xl h-full bg-white shadow-2xl flex flex-col z-10 overflow-hidden"
+            >
+              {/* Sticky Modal Header */}
+              <div className="sticky top-0 bg-white/90 backdrop-blur-md border-b border-slate-100 px-6 py-4 flex items-center justify-between z-20">
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="flex items-center gap-1.5 text-slate-600 hover:text-primary-600 font-extrabold transition-colors group text-[14px]"
+                >
+                  <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                  Back to Services
+                </button>
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors"
+                  aria-label="Close details"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Scrollable Contents */}
+              <div className="flex-1 overflow-y-auto px-6 py-8 md:p-10">
+                {/* Main Content Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-8">
+                  {/* Left Column: Details */}
+                  <div className="md:col-span-7">
+
+                    <h2 className="text-3xl md:text-3xl font-black text-slate-900 leading-tight mb-4">
+                      {selectedService.title}
+                    </h2>
+                    {selectedService.longDesc.split("\n\n").map((para, idx) => (
+                      <p key={idx} className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6">{para}</p>
+                    ))}
+                  </div>
+
+                  {/* Right Column: Media + Stats */}
+                  <div className="md:col-span-5 flex flex-col gap-6">
+                    {/* Service Image Card */}
+                    <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden relative shadow-lg border border-slate-100 bg-slate-50">
+                      <img
+                        src={selectedService.image}
+                        alt={selectedService.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Statistics Grid */}
+                    <div className="grid grid-cols-3 gap-3">
+                      {selectedService.stats.map((stat) => (
+                        <div key={stat.label} className="bg-slate-50/80 border border-slate-100 rounded-xl p-3 text-center">
+                          <span className="block text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                            {stat.label}
+                          </span>
+                          <span className="block text-[13px] font-extrabold text-primary-600 whitespace-nowrap">
+                            {stat.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+
+                {/* Checklist of Features */}
+                <div className="mb-10">
+                  <h3 className="text-[12px] font-black uppercase tracking-widest text-slate-400 mb-5 flex items-center gap-1">
+                    <ShieldCheck className="w-4 h-4 text-primary-500" />
+                    What's Included in the Service
+                  </h3>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {selectedService.features.map((feature, idx) => (
+                      <motion.li
+                        key={feature}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.05 }}
+                        className="flex items-start gap-3 bg-slate-50/50 hover:bg-slate-50 border border-slate-100/50 rounded-2xl p-4 transition-colors"
+                      >
+                        <div className="w-5 h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-500 mt-0.5">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                        </div>
+                        <span className="text-[13px] text-slate-600 font-semibold leading-relaxed">
+                          {feature}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* WhatsApp Action Area */}
+                <div className="mt-8">
+                  <div className="bg-gradient-to-br from-emerald-500/5 to-emerald-500/10 border border-emerald-100 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div className="text-left">
+                      <h4 className="text-[17px] font-extrabold text-slate-900 mb-1">
+                        Ready to maximize your solar performance?
+                      </h4>
+                      <p className="text-[13px] text-slate-500 font-semibold">
+                        Book a professional solar cleaning service or request a custom quote from our team today.
+                      </p>
+                    </div>
+                    <a
+                      href={`https://wa.me/919274371058?text=${encodeURIComponent(selectedService.waMsg)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-full md:w-auto items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-[18px] font-extrabold transition-all duration-200 active:scale-95 shadow-lg shadow-emerald-500/25 whitespace-nowrap"
+                    >
+                      Book on
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-8 h-8" />
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )
+        }
+      </AnimatePresence >
+    </section >
   );
 }

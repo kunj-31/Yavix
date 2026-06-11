@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: "Yavix Energy – Solar Cleaning Experts | Ahmedabad",
@@ -36,10 +37,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#0066ff" />
       </head>
       <body className="antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
-}
+  }

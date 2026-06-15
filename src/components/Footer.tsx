@@ -3,17 +3,17 @@ import { Zap, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { footer, label } from "framer-motion/client";
 
 const WA_NUMBER = "919274371058";
-const WA_MSG = encodeURIComponent("Hello Yavix Energy! I'd like to get a solar cleaning quote.");
+const WA_MSG = encodeURIComponent("Hello Yavix Solar Cleaning! I'd like to get a solar cleaning quote.");
 
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-12">
           {/* ── Brand ── */}
-          <div className="md:col-span-4 lg:col-span-4 mb-6 pr-6">
+          <div className="md:col-span-4 lg:col-span-4 mb-4 md:mb-6 pr-6">
             <Link href="/" className="flex items-center mb-2">
-              <img src="/logos/Logo.png" alt="Yavix Solar Cleaning" className="h-14 w-auto object-contain" />
+              <img src="/logos/Logo.png" alt="Yavix Solar Cleaning" className="h-12 sm:h-14 w-auto object-contain" />
             </Link>
 
             <p className="text-[14px] text-gray-600 leading-7 text-justify">
@@ -22,11 +22,11 @@ export default function Footer() {
           </div>
 
           {/* ── Services ── */}
-          <div className="md:col-span-3 lg:col-span-3 mb-6">
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">
+          <div className="md:col-span-3 lg:col-span-3 mb-4 md:mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
               Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {[
                 "Residential Solar Cleaning",
                 "Commercial Solar Cleaning",
@@ -45,11 +45,11 @@ export default function Footer() {
           </div>
 
           {/* ── Quick Links ── */}
-          <div className="md:col-span-2 lg:col-span-2 mb-6">
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">
+          <div className="md:col-span-2 lg:col-span-2 mb-4 md:mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
@@ -67,11 +67,11 @@ export default function Footer() {
           </div>
 
           {/* ── Contact Info ── */}
-          <div className="md:col-span-3 lg:col-span-3 mb-6">
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-4">
+          <div className="md:col-span-3 lg:col-span-3 mb-4 md:mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-2.5 md:space-y-4">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary-500 shrink-0" />
                 <a href="tel:+919274371058" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom Bar ── */}
-        <div className="mt-12 pt-6 border-t border-gray-200 flex justify-start items-center">
+        <div className="mt-6 sm:mt-12 pt-6 border-t border-gray-200 flex justify-start items-center">
           <p className="text-xs sm:text-sm text-gray-400 text-left">
             © 2026 Yavix Solar Cleaning. All Rights Reserved.
           </p>

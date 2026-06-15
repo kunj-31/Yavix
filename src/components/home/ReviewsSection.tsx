@@ -166,6 +166,9 @@ export default function ReviewsSection() {
   const [visibleCount, setVisibleCount] = useState(3);
   const total = reviews.length;
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -186,6 +189,29 @@ export default function ReviewsSection() {
 
   const next = () => setCurrent((c) => (c >= maxIndex ? 0 : c + 1));
   const prev = () => setCurrent((c) => (c <= 0 ? maxIndex : c - 1));
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    if (isLeftSwipe) {
+      next();
+    }
+    if (isRightSwipe) {
+      prev();
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
   useEffect(() => {
     if (!paused) {
@@ -210,8 +236,8 @@ export default function ReviewsSection() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-4 border border-primary-100">
             CUSTOMER REVIEWS
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6 tracking-tight leading-none">
-            What Our <span className="text-primary-600">Customers Say</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-900 mb-4">
+            What Our <span className="gradient-text">Customers Say</span>
           </h2>
           
           {/* Aggregate Rating Widget Header */}
@@ -242,9 +268,12 @@ export default function ReviewsSection() {
           className="relative min-h-[300px] flex flex-col justify-center"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Inner relative container with padding to hold the absolute-positioned arrows on left and right */}
-          <div className="relative px-10 sm:px-14">
+          <div className="relative px-6 sm:px-14">
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {visible.map((r, i) => (
@@ -305,19 +334,19 @@ export default function ReviewsSection() {
             {/* Left side flanking navigation arrow */}
             <button 
               onClick={prev} 
-              className="absolute left-1 sm:left-0 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white border border-gray-100 shadow-md flex items-center justify-center text-gray-400 hover:text-primary-600 hover:border-primary-200 transition-all hover:scale-105 active:scale-95 z-10"
+              className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-gray-100 shadow-md items-center justify-center text-gray-400 hover:text-primary-600 hover:border-primary-200 transition-all hover:scale-105 active:scale-95 z-10"
               aria-label="Previous review"
             >
-              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
             {/* Right side flanking navigation arrow */}
             <button 
               onClick={next} 
-              className="absolute right-1 sm:right-0 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white border border-gray-100 shadow-md flex items-center justify-center text-gray-400 hover:text-primary-600 hover:border-primary-200 transition-all hover:scale-105 active:scale-95 z-10"
+              className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white border border-gray-100 shadow-md items-center justify-center text-gray-400 hover:text-primary-600 hover:border-primary-200 transition-all hover:scale-105 active:scale-95 z-10"
               aria-label="Next review"
             >
-              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ChevronRight className="w-5 h-5" />
             </button>
 
           </div>

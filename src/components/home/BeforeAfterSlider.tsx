@@ -58,7 +58,7 @@ export default function BeforeAfterSlider() {
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-4 border border-primary-100">Before & After</span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-900 mb-4">See The <span className="gradient-text">Difference</span></h2>
-          <p className="text-gray-500 max-w-xl mx-auto">Drag the slider to reveal how Yavix Energy transforms dust-covered panels into peak-efficiency clean energy generators.</p>
+          <p className="text-gray-500 max-w-xl mx-auto">Drag the slider to reveal how Yavix Solar Cleaning transforms dust-covered panels into peak-efficiency clean energy generators.</p>
         </motion.div>
 
         <motion.div

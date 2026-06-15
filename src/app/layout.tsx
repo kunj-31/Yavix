@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
-  title: "Yavix Energy – Solar Cleaning Experts | Ahmedabad",
+  title: "Yavix Solar Cleaning – Solar Cleaning Experts | Ahmedabad",
   description:
     "Professional solar panel cleaning services in Ahmedabad. Improve solar efficiency with premium cleaning and maintenance for homes, offices, and industries. Book now!",
   keywords:
-    "solar panel cleaning, solar cleaning Ahmedabad, solar maintenance, solar efficiency, Yavix Energy",
+    "solar panel cleaning, solar cleaning Ahmedabad, solar maintenance, solar efficiency, Yavix Solar Cleaning",
   openGraph: {
-    title: "Yavix Energy – Solar Cleaning Experts",
+    title: "Yavix Solar Cleaning – Solar Cleaning Experts",
     description:
       "Professional solar panel cleaning services in Ahmedabad. Maximize efficiency with premium solar cleaning.",
     type: "website",

@@ -19,8 +19,8 @@ export default function CaseStudyClient() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-6 border border-primary-100">Proof of Work</span>
-            <h1 className="text-5xl font-extrabold text-primary-900 mb-4">Real <span className="gradient-text">Results</span>, Real Customers</h1>
-            <p className="text-gray-500 text-lg">Documented before/after results from actual Yavix Energy projects across Ahmedabad and Gujarat.</p>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-primary-900 mb-4">Real <span className="gradient-text">Results</span>, Real Customers</h1>
+            <p className="text-gray-500 text-lg">Documented before/after results from actual Yavix Solar Cleaning projects across Ahmedabad and Gujarat.</p>
           </motion.div>
         </div>
       </section>
@@ -28,7 +28,7 @@ export default function CaseStudyClient() {
       {/* Summary stats */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 text-center">
             {[{ val: "avg +42%", label: "Average Efficiency Gain" }, { val: "6 studies", label: "Documented Projects" }, { val: "736+", label: "Panels in Case Studies" }, { val: "100%", label: "Verified Results" }].map((s) => (
               <div key={s.label} className="p-5 rounded-2xl bg-[#f7faff] border border-primary-100">
                 <p className="text-2xl font-extrabold text-primary-600 mb-1">{s.val}</p>
@@ -100,9 +100,9 @@ export default function CaseStudyClient() {
       <section className="py-20 bg-gradient-to-br from-primary-500 to-primary-700">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-4xl font-extrabold text-white mb-4">Your Panels Could Be Next</h2>
-            <p className="text-primary-200 mb-8">Join 200+ customers who restored their solar efficiency with Yavix Energy.</p>
-            <a href={`https://wa.me/919274371058?text=${encodeURIComponent("Hello Yavix Energy! I saw your case studies and want to book a cleaning.")}`}
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Your Panels Could Be Next</h2>
+            <p className="text-primary-200 mb-8">Join 200+ customers who restored their solar efficiency with Yavix Solar Cleaning.</p>
+            <a href={`https://wa.me/919274371058?text=${encodeURIComponent("Hello Yavix Solar Cleaning! I saw your case studies and want to book a cleaning.")}`}
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-primary-600 font-bold text-[15px] hover:bg-primary-50 transition shadow-xl">
               <Zap className="w-5 h-5" /> Book Your Cleaning Now

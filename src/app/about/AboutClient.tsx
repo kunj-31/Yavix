@@ -41,7 +41,7 @@ export default function AboutPage() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[13px] font-bold tracking-widest uppercase mb-6 border border-primary-100 shadow-sm">
                 About Us
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-primary-900 mb-8 leading-[1.15] tracking-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-primary-900 mb-8 leading-[1.15] tracking-tight">
                 Maximizing <span className="gradient-text">Solar Performance</span><br className="hidden md:block" /> Across Ahmedabad
               </h1>
               <div className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium max-w-3xl mx-auto space-y-4">
@@ -65,7 +65,7 @@ export default function AboutPage() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-bold tracking-widest uppercase mb-5 border border-primary-100">
                 Our Story
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-primary-900 mb-8 leading-tight tracking-tight">
+              <h2 className="text-2xl md:text-4xl font-black text-primary-900 mb-8 leading-tight tracking-tight">
                 From a Local Challenge to a <br className="hidden lg:block" />City-Wide Solution
               </h2>
               <div className="space-y-6 text-[16px] sm:text-[17px] text-gray-600 leading-relaxed font-medium">
@@ -89,9 +89,9 @@ export default function AboutPage() {
                 { val: "50+", label: "Commercial Projects" },
                 { val: "5+", label: "Star Rated Service" },
               ].map((s) => (
-                <div key={s.label} className="p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center flex flex-col justify-center hover:-translate-y-1 transition-transform duration-300">
-                  <p className="text-4xl sm:text-5xl font-black text-primary-600 mb-2">{s.val}</p>
-                  <p className="text-[14px] sm:text-[15px] text-gray-500 font-semibold">{s.label}</p>
+                <div key={s.label} className="p-4 sm:p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center flex flex-col justify-center hover:-translate-y-1 transition-transform duration-300">
+                  <p className="text-3xl md:text-5xl font-black text-primary-600 mb-2">{s.val}</p>
+                  <p className="text-[12px] sm:text-[15px] text-gray-500 font-semibold">{s.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-bold tracking-widest uppercase mb-5 border border-primary-100">
               Our Commitment
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black text-primary-900 tracking-tight">What Drives Us</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-primary-900 tracking-tight">What Drives Us</h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {commitments.map((v, i) => (

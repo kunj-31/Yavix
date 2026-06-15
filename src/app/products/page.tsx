@@ -65,6 +65,7 @@ export default function ProductsPage() {
           margin: 0 auto;
         }
         @media (max-width: 680px) {
+          .pp-page { padding: 100px 16px 60px; }
           .pp-grid { grid-template-columns: 1fr; gap: 24px; }
         }
 

@@ -100,7 +100,7 @@ export default function DetailModal({ product, onClose }: DetailModalProps) {
 
             <button
               onClick={() => {
-                const msg = `Hello Yavix Energy! I'd like to order the ${product.name}. Please confirm availability and shipping details.`;
+                const msg = `Hello Yavix Solar Cleaning! I'd like to order the ${product.name}. Please confirm availability and shipping details.`;
                 window.open(
                   `https://wa.me/919274371058?text=${encodeURIComponent(msg)}`,
                   "_blank"

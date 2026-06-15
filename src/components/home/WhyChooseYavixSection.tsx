@@ -57,7 +57,7 @@ export default function WhyChooseYavixSection() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-4 border border-primary-100">
             Our Strengths
           </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-primary-900 mb-4">
             Why Choose <span className="gradient-text">Yavix?</span>
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
@@ -66,7 +66,7 @@ export default function WhyChooseYavixSection() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-hidden">
           {reasons.map((r, i) => (
             <motion.div
               key={r.title}

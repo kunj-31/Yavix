@@ -17,7 +17,7 @@ const navLinks = [
 
 const WA_NUMBER = "919274371058";
 const WA_MSG = encodeURIComponent(
-  "Hello Yavix Energy! I'd like to book a solar panel cleaning service.",
+  "Hello Yavix Solar Cleaning! I'd like to book a solar panel cleaning service.",
 );
 
 export default function Navbar() {
@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled
           ? "bg-white shadow-[0_2px_24px_rgba(0,102,255,0.08)] border-b border-blue-50"
           : "bg-white"
           }`}
@@ -50,7 +50,7 @@ export default function Navbar() {
               <img
                 src="/logos/Logo.png"
                 alt="Yavix Solar Cleaning"
-                className="h-14 sm:h-15 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -114,13 +114,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22 }}
-            className="fixed top-[72px] left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-blue-100 shadow-xl md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-[90] bg-white/95 backdrop-blur-xl border-b border-blue-100 shadow-xl md:hidden"
           >
             <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => setMenuOpen(false)}
                   className={`px-4 py-3 rounded-xl text-[15px] font-medium transition-colors ${pathname === link.href
                     ? "bg-primary-50 text-primary-600"
                     : "text-gray-700 hover:bg-gray-50"
@@ -133,6 +134,7 @@ export default function Navbar() {
                 href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
                 className="mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary-500 text-white text-[14px] font-semibold"
               >
                 <Zap className="w-4 h-4" />

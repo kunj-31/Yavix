@@ -7,8 +7,8 @@ import type { CSSProperties } from "react";
 import { Zap, MessageCircle, ArrowRight, Star } from "lucide-react";
 
 const WA_NUMBER = "919274371058";
-const BOOK_MSG  = encodeURIComponent("Hello Yavix Energy! I want to book a solar panel cleaning service.");
-const QUOTE_MSG = encodeURIComponent("Hello Yavix Energy! I need a WhatsApp quote for solar panel cleaning.");
+const BOOK_MSG  = encodeURIComponent("Hello Yavix Solar Cleaning! I want to book a solar panel cleaning service.");
+const QUOTE_MSG = encodeURIComponent("Hello Yavix Solar Cleaning! I need a WhatsApp quote for solar panel cleaning.");
 
 const Particle = ({ style }: { style: CSSProperties }) => (
   <span className="particle" style={style} />
@@ -102,7 +102,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.08] tracking-tight text-gray-900"
+              className="text-3xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.08] tracking-tight text-gray-900"
             >
               Professional{" "}
               <span className="gradient-text">Solar Panel</span>{" "}
@@ -114,7 +114,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg text-gray-800 leading-relaxed max-w-[520px] font-medium"
+              className="text-base md:text-lg text-gray-800 leading-relaxed max-w-[520px] font-medium"
             >
               Improve solar efficiency with premium solar panel cleaning and maintenance
               solutions for homes, offices, and industries.

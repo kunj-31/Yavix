@@ -13,7 +13,7 @@ export default function Footer() {
           {/* ── Brand ── */}
           <div className="md:col-span-4 lg:col-span-4 mb-4 md:mb-6 pr-6">
             <Link href="/" className="flex items-center mb-2">
-              <img src="/logos/Logo.png" alt="Yavix Solar Cleaning" className="h-12 sm:h-14 w-auto object-contain" />
+              <img src="/images/logos/Logo.png" alt="Yavix Solar Cleaning" className="h-12 sm:h-14 w-auto object-contain" />
             </Link>
 
             <p className="text-[14px] text-gray-600 leading-7 text-justify">

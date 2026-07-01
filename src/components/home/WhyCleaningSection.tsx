@@ -6,22 +6,22 @@ import { Zap, Droplets, Leaf, Shield } from "lucide-react";
 
 const benefits = [
   {
-    image: "/images/why-cleaning/dusty-panels.png",
+    image: "/images/why-cleaning/Essential_1.jpg",
     title: "Dust Reduces Performance",
     desc:"Dust,pollution & mineral deposits can significantly reduce solar panel efficiency.Regular cleaning helps maintain peak output.",
   },
   {
-    image: "/images/why-cleaning/cleaning-panels.png",
+    image: "/images/why-cleaning/Essential_2.jpg",
     title: "Higher Energy Output",
     desc: "Clean panels absorb more sunlight, helping your system generate more electricity and improve overall performance.",
   },
   {
-    image: "/images/why-cleaning/savings-panels.png",
+    image: "/images/why-cleaning/Essential_3.jpg",
     title: "Lower Electricity Costs",
     desc: "Improved solar efficiency means greater energy savings and faster returns on your solar investment.",
   },
   {
-    image: "/images/why-cleaning/clean-panels.png",
+    image: "/images/why-cleaning/Essential_4.jpg",
     title: "Extended Panel Lifespan",
     desc: "Removing dirt, bird droppings and mineral deposits helps protect panel surfaces and supports long-term system reliability.",
   },

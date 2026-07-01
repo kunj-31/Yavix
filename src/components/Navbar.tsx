@@ -48,7 +48,7 @@ export default function Navbar() {
             {/* ── Logo ── */}
             <Link href="/" className="flex items-center gap-3 group">
               <img
-                src="/logos/Logo.png"
+                src="/images/logos/Logo.png"
                 alt="Yavix Solar Cleaning"
                 className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />

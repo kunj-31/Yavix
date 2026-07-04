@@ -185,7 +185,7 @@ export default function HeroSection() {
             >
               {/* AFTER – clean base layer */}
               <div className="absolute inset-0 pointer-events-none">
-                <Image src="/panel-clean.png" alt="Clean solar panel" fill className="object-cover" style={{ filter: "brightness(1.08) saturate(1.2)", objectPosition: "center" }} sizes="(max-width: 768px) 100vw, 640px" priority />
+                <Image src="/panel-clean.avif" alt="Clean solar panel" fill className="object-cover" style={{ filter: "brightness(1.08) saturate(1.2)", objectPosition: "center" }} sizes="(max-width: 768px) 100vw, 640px" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-900/20 via-transparent to-transparent" />
                 
                 {/* Wash sweep */}
@@ -203,7 +203,7 @@ export default function HeroSection() {
               {/* BEFORE – dirty clipped layer */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ width: `${sliderX}%` }}>
                 <div className="absolute inset-0" style={{ width: `${(100 / sliderX) * 100}%` }}>
-                  <Image src="/panel-dirty.png" alt="Dirty solar panel" fill className="object-cover"
+                  <Image src="/panel-dirty.avif" alt="Dirty solar panel" fill className="object-cover"
                     style={{ filter: "sepia(0.7) saturate(0.4) brightness(0.72) contrast(1.1)", objectPosition: "center" }} sizes="(max-width: 768px) 100vw, 640px" priority />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(139,90,43,0.35) 0%,rgba(101,67,33,0.25) 50%,rgba(139,90,43,0.35) 100%)", mixBlendMode: "multiply" }} />
                 </div>

@@ -14,12 +14,12 @@ export const PRODUCTS: EnhancedProduct[] = [
     description:
       "This is a professional-grade cleaning solution designed for solar panels, glass facades, skylights and high windows. Combining a premium microfiber cleaning head with an integrated rubber wiper blade, it washes and wipes in a single pass for faster, streak-free results.\n\nFeaturing a telescopic pole that extends from 3 to 6 meters, this brush allows safe and convenient cleaning of hard-to-reach surfaces without compromising performance. Its lightweight, rust-resistant compatibility makes it an ideal choice for both residential and commercial cleaning applications.",
     images: [
-      "/images/products/Microfiber/01.jpg",
-      "/images/products/Microfiber/02.jpg",
-      "/images/products/Microfiber/03.jpg",
-      "/images/products/Microfiber/04.jpg",
-      "/images/products/Microfiber/05.jpg",
-      "/images/products/Microfiber/06.jpg",
+      "/images/products/Microfiber/01.avif",
+      "/images/products/Microfiber/02.avif",
+      "/images/products/Microfiber/03.avif",
+      "/images/products/Microfiber/04.avif",
+      "/images/products/Microfiber/05.avif",
+      "/images/products/Microfiber/06.avif",
     ],
     variants: [
       { label: "3 Meter", price: 1499 },
@@ -66,12 +66,12 @@ export const PRODUCTS: EnhancedProduct[] = [
     description:
       "This is a professional-grade solar panel cleaning brush designed for safe and effective maintenance of rooftop, commercial and industrial solar installations. Featuring a high-density nylon brush head and a flexible telescopic pole, it efficiently removes dust, dirt, bird droppings and other debris that can affect solar panel performance.\n\nWith an adjustable pole that extends from 3 to 6 meters, this brush provides easy access to elevated solar panels while reducing the need for ladders or additional equipment. The included 7-meter PU water pipe ensures a continuous water supply for improved cleaning efficiency. Lightweight, durable and easy to operate, it is an ideal solution for regular solar panel maintenance.",
     images: [
-      "/images/products/WaterFed/01.jpg",
-      "/images/products/WaterFed/02.jpg",
-      "/images/products/WaterFed/03.jpg",
-      "/images/products/WaterFed/04.jpg",
-      "/images/products/WaterFed/05.jpg",
-      "/images/products/WaterFed/06.jpg",
+      "/images/products/WaterFed/01.avif",
+      "/images/products/WaterFed/02.avif",
+      "/images/products/WaterFed/03.avif",
+      "/images/products/WaterFed/04.avif",
+      "/images/products/WaterFed/05.avif",
+      "/images/products/WaterFed/06.avif",
     ],
     variants: [
       { label: "3 Meter", price: 2499 },

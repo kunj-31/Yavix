@@ -54,10 +54,9 @@ export default function ProductCard({
         }}
       >
         <Image
-          src={product.images?.[0] || "/placeholder.jpg"}
+          src={product.images?.[0] || "/placeholder.avif"}
           alt={product.name}
           fill
-          priority
           sizes="(max-width: 768px) 100vw, 50vw"
           style={{
             objectFit: "contain",

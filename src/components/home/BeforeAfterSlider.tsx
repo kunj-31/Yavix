@@ -73,7 +73,7 @@ export default function BeforeAfterSlider() {
         >
           {/* AFTER – clean base layer */}
           <div className="absolute inset-0">
-            <Image src="/panel-clean.png" alt="Clean solar panel" fill className="object-cover" style={{ filter: "brightness(1.08) saturate(1.2)" }} sizes="896px" />
+            <Image src="/panel-clean.avif" alt="Clean solar panel" fill className="object-cover" style={{ filter: "brightness(1.08) saturate(1.2)" }} sizes="896px" />
             <div className="absolute inset-0 shine-overlay" />
             {/* YAVIX reflection */}
             <AnimatePresence>
@@ -112,7 +112,7 @@ export default function BeforeAfterSlider() {
           {/* BEFORE – dirty clipped layer */}
           <div className="absolute inset-0 overflow-hidden" style={{ width: `${sliderX}%` }}>
             <div className="absolute inset-0" style={{ width: `${(100 / sliderX) * 100}%` }}>
-              <Image src="/panel-dirty.png" alt="Dirty solar panel" fill className="object-cover"
+              <Image src="/panel-dirty.avif" alt="Dirty solar panel" fill className="object-cover"
                 style={{ filter: "sepia(0.7) saturate(0.4) brightness(0.72) contrast(1.1)" }} sizes="896px" />
               <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(139,90,43,0.35) 0%,rgba(101,67,33,0.25) 50%,rgba(139,90,43,0.35) 100%)", mixBlendMode: "multiply" }} />
               <div className="absolute bottom-4 left-4 z-30">

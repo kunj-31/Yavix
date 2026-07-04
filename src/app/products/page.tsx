@@ -1,12 +1,20 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import ProductCard from "@/components/products/ProductCard";
 import { PRODUCTS } from "@/lib/products";
 
-/* ─────────────────────────────────────────────
-   PAGE
-───────────────────────────────────────────── */
+export const metadata: Metadata = {
+  title: "Solar Panel Cleaning Brushes & Equipment | Yavix Solar Cleaning",
+  description: "Shop professional-grade solar panel cleaning brushes and equipment in Ahmedabad. High-tensile telescopic microfiber wiper brushes and heavy-duty water-fed nylon brushes.",
+  keywords: "solar panel cleaning brush, solar cleaning equipment, telescopic pole squeegee, water fed solar brush, Ahmedabad, Gujarat",
+  openGraph: {
+    title: "Solar Panel Cleaning Brushes & Equipment | Yavix Solar Cleaning",
+    description: "Shop professional-grade solar panel cleaning brushes and equipment. High-tensile telescopic brushes.",
+    url: "https://yavix.in/products",
+    type: "website",
+  }
+};
+
 export default function ProductsPage() {
 
   return (

@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 const clients = [
   {
     name: "J.S. Gear",
-    image: "/images/logos/js-gear.jpg",
+    image: "/images/logos/js-gear.avif",
   },
   {
     name: "Swastik Gum Industries",
-    image: "/images/logos/swastik-gum.jpg",
+    image: "/images/logos/swastik-gum.avif",
   },
   {
     name: "Sarjan Sky",
-    image: "/images/logos/sarjan-sky.jpg",
+    image: "/images/logos/sarjan-sky.avif",
   },
   {
     name: "Kedar Engineering",
-    image: "/images/logos/kedar-engineering.jpg",
+    image: "/images/logos/kedar-engineering.avif",
   },
   {
     name:"Techflow",
-    image:"/images/logos/Techflow.jpg",
+    image:"/images/logos/Techflow.avif",
   }
 ];
 
@@ -57,6 +57,7 @@ export default function Clients() {
               <img
                 src={client.image}
                 alt={client.name}
+                loading="lazy"
                 className="max-h-20 w-auto object-contain"
                 draggable={false}
               />

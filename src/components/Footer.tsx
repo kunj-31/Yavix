@@ -13,7 +13,7 @@ export default function Footer() {
           {/* ── Brand ── */}
           <div className="md:col-span-4 lg:col-span-4 mb-4 md:mb-6 pr-6">
             <Link href="/" className="flex items-center mb-2">
-              <img src="/images/logos/Logo.png" alt="Yavix Solar Cleaning" className="h-12 sm:h-14 w-auto object-contain" />
+              <img src="/images/logos/Logo.avif" alt="Yavix Solar Cleaning" loading="lazy" className="h-12 sm:h-14 w-auto object-contain" />
             </Link>
 
             <p className="text-[14px] text-gray-600 leading-7 text-justify">
@@ -93,16 +93,16 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 mt-4">
                 <a href="https://facebook.com/profile.php?id=61574586806347" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" className="w-8 h-8" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" loading="lazy" className="w-8 h-8" />
                 </a>
                 <a href="https://www.instagram.com/yavix_solarcleaning" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" className="w-8 h-8" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" loading="lazy" className="w-8 h-8" />
                 </a>
                 <a href="https://www.youtube.com/@YavixSolar" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" className="w-8 h-8" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" loading="lazy" className="w-8 h-8" />
                 </a>
                 <a href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-8 h-8" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy" className="w-8 h-8" />
                 </a>
               </li>
             </ul>

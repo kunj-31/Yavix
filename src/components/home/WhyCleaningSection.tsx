@@ -6,22 +6,22 @@ import { Zap, Droplets, Leaf, Shield } from "lucide-react";
 
 const benefits = [
   {
-    image: "/images/why-cleaning/Essential_1.jpg",
+    image: "/images/why-cleaning/Essential_1.avif",
     title: "Dust Reduces Performance",
     desc:"Dust,pollution & mineral deposits can significantly reduce solar panel efficiency.Regular cleaning helps maintain peak output.",
   },
   {
-    image: "/images/why-cleaning/Essential_2.jpg",
+    image: "/images/why-cleaning/Essential_2.avif",
     title: "Higher Energy Output",
     desc: "Clean panels absorb more sunlight, helping your system generate more electricity and improve overall performance.",
   },
   {
-    image: "/images/why-cleaning/Essential_3.jpg",
+    image: "/images/why-cleaning/Essential_3.avif",
     title: "Lower Electricity Costs",
     desc: "Improved solar efficiency means greater energy savings and faster returns on your solar investment.",
   },
   {
-    image: "/images/why-cleaning/Essential_4.jpg",
+    image: "/images/why-cleaning/Essential_4.avif",
     title: "Extended Panel Lifespan",
     desc: "Removing dirt, bird droppings and mineral deposits helps protect panel surfaces and supports long-term system reliability.",
   },
@@ -154,6 +154,7 @@ export default function WhyCleaningSection() {
                   <img
                     src={b.image}
                     alt={b.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>

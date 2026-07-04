@@ -24,6 +24,48 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "CleaningService",
+    "name": "Yavix Solar Cleaning",
+    "image": "https://yavix.in/images/logos/Logo.avif",
+    "@id": "https://yavix.in/#localbusiness",
+    "url": "https://yavix.in",
+    "telephone": "+91 92743 71058",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "36, Bhagyoday Society, Thakkarbapanagar Road",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "382350",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "23.0428",
+      "longitude": "72.6373"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://facebook.com/profile.php?id=61574586806347",
+      "https://www.instagram.com/yavix_solarcleaning",
+      "https://www.youtube.com/@YavixSolar"
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
@@ -35,6 +77,26 @@ export default function RootLayout({
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0066ff" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('contextmenu', function(e) {
+                if (e.target && e.target.tagName === 'IMG') {
+                  e.preventDefault();
+                }
+              }, true);
+              document.addEventListener('dragstart', function(e) {
+                if (e.target && e.target.tagName === 'IMG') {
+                  e.preventDefault();
+                }
+              }, true);
+            `
+          }}
+        />
       </head>
       <body className="antialiased">
         <CartProvider>

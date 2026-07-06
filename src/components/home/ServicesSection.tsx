@@ -298,13 +298,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header - Centered */}
         <div className="mb-20 text-center flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center gap-2 mb-4"
-          >
+          <div className="flex flex-col items-center gap-2 mb-4">
             <span className="inline-block px-5 py-2 rounded-full bg-primary-50 text-primary-600 text-[13px] font-extrabold tracking-widest uppercase border border-primary-100 shrink-0">
               OUR SERVICES
             </span>
@@ -316,15 +310,39 @@ export default function ServicesSection() {
               Maximize energy output, extend panel life and protect your solar
               investment with expert cleaning services.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         {/* Slider Wrapper with side padding for buttons */}
         <div className="relative px-0 sm:px-14">
+          <button
+            onClick={() => scroll("left")}
+            className={`absolute left-2 top-1/2 -translate-y-1/2 z-30 flex sm:hidden items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-md transition-all active:scale-95 ${
+              showLeftBtn
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-90 pointer-events-none"
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={() => scroll("right")}
+            className={`absolute right-2 top-1/2 -translate-y-1/2 z-30 flex sm:hidden items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-md transition-all active:scale-95 ${
+              showRightBtn
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-90 pointer-events-none"
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
           {/* Floating Left Button - positioned outside on the left side of the slider */}
           <button
             onClick={() => scroll("left")}
-            className={`hidden sm:flex absolute left-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${
+            className={`hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${
               showLeftBtn
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-90 pointer-events-none"
@@ -338,7 +356,7 @@ export default function ServicesSection() {
           {/* Floating Right Button - positioned outside on the right side of the slider */}
           <button
             onClick={() => scroll("right")}
-            className={`hidden sm:flex absolute right-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${
+            className={`hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${
               showRightBtn
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-90 pointer-events-none"
@@ -355,15 +373,11 @@ export default function ServicesSection() {
             className="flex gap-8 overflow-x-auto pb-8 scroll-smooth scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {services.map((service, index) => {
+            {services.map((service) => {
               const IconComponent = service.icon;
               return (
-                <motion.div
+                <div
                   key={service.id}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
                   onClick={() => setSelectedService(service)}
                   className="w-[calc(100vw-32px)] sm:w-[320px] shrink-0 snap-center sm:snap-start bg-white border border-slate-100 rounded-3xl p-5 hover:border-primary-200 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
                 >
@@ -399,7 +413,7 @@ export default function ServicesSection() {
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -419,22 +433,13 @@ export default function ServicesSection() {
         {selectedService && (
           <div className="fixed inset-0 z-[200] flex justify-end overflow-hidden">
             {/* Backdrop with blur */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+<div
               onClick={closeModal}
               className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs"
             />
 
             {/* Sliding Panel */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 26, stiffness: 220 }}
-              className="relative w-full max-w-3xl h-full bg-white shadow-2xl flex flex-col z-10 overflow-hidden"
-            >
+            <div className="relative w-full max-w-3xl h-full bg-white shadow-2xl flex flex-col z-10 overflow-hidden">
               {/* Sticky Modal Header */}
               <div className="sticky top-0 bg-white/90 backdrop-blur-md border-b border-slate-100 px-4 sm:px-6 py-4 flex items-center justify-between gap-3 z-20">
                 <button
@@ -534,12 +539,9 @@ export default function ServicesSection() {
                     What's Included in the Service
                   </h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {selectedService.features.map((feature, idx) => (
-                      <motion.li
+                    {selectedService.features.map((feature) => (
+                      <li
                         key={feature}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: idx * 0.05 }}
                         className="flex items-start gap-3 bg-slate-50/50 hover:bg-slate-50 border border-slate-100/50 rounded-2xl p-4 transition-colors"
                       >
                         <div className="w-5 h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-500 mt-0.5">
@@ -548,7 +550,7 @@ export default function ServicesSection() {
                         <span className="text-[13px] text-slate-600 font-semibold leading-relaxed">
                           {feature}
                         </span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -581,7 +583,7 @@ export default function ServicesSection() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         )}
       </AnimatePresence>

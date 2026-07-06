@@ -14,7 +14,7 @@ import {
   ChevronRight,
   Check,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
 } from "lucide-react";
 
 interface ServiceStat {
@@ -40,8 +40,10 @@ const services: Service[] = [
   {
     id: "residential",
     title: "Residential Solar Cleaning",
-    shortDesc: "House Rooftops • Flats • Apartments • Residential Societies • Villas • Farmhouses • Bungalows",
-    longDesc: "Residential solar panels are exposed to dust, bird droppings, pollen, pollution, hard water stains and mineral deposits that can reduce energy generation over time. Our professional cleaning service uses specialized equipment and safe, industry-approved methods to remove contaminants and restore optimal performance.  \n\n Whether installed on a house, villa, bungalow, apartment, residential society, row house or farmhouse, we help maximize efficiency and protect your investment.",
+    shortDesc:
+      "House Rooftops • Flats • Apartments • Residential Societies • Villas • Farmhouses • Bungalows",
+    longDesc:
+      "Residential solar panels are exposed to dust, bird droppings, pollen, pollution, hard water stains and mineral deposits that can reduce energy generation over time. Our professional cleaning service uses specialized equipment and safe, industry-approved methods to remove contaminants and restore optimal performance.  \n\n Whether installed on a house, villa, bungalow, apartment, residential society, row house or farmhouse, we help maximize efficiency and protect your investment.",
     image: "/images/service/Service_1.avif",
     icon: Home,
     scope: "",
@@ -52,16 +54,19 @@ const services: Service[] = [
       "Removal of dust, bird droppings and environmental buildup",
       "Soft-bristle brushes for scratch-free cleaning",
       "Safe telescopic pole cleaning for hard-to-reach panels",
-      "Performance-focused cleaning to help maintain maximum efficiency"
+      "Performance-focused cleaning to help maintain maximum efficiency",
     ],
     stats: [],
-    waMsg: "Hello Yavix Solar Cleaning! I'd like to book a Residential Solar Cleaning service."
+    waMsg:
+      "Hello Yavix Solar Cleaning! I'd like to book a Residential Solar Cleaning service.",
   },
   {
     id: "commercial",
     title: "Commercial Solar Cleaning",
-    shortDesc: "Office Buildings • Shopping Complexes • Schools • Colleges • Hospitals • Hotels • Business Parks",
-    longDesc: "Commercial solar installations are a valuable investment, but dirt, pollution, bird droppings, hard water stains and mineral deposits can reduce energy output over time. Our professional cleaning service helps maintain maximum solar performance and operational efficiency through safe, performance-focused cleaning. \n\n From office buildings and shopping complexes to schools, hospitals, hotels and corporate campuses, our experienced team provides reliable cleaning with minimal disruption, helping your solar assets perform at their full potential.",
+    shortDesc:
+      "Office Buildings • Shopping Complexes • Schools • Colleges • Hospitals • Hotels • Business Parks",
+    longDesc:
+      "Commercial solar installations are a valuable investment, but dirt, pollution, bird droppings, hard water stains and mineral deposits can reduce energy output over time. Our professional cleaning service helps maintain maximum solar performance and operational efficiency through safe, performance-focused cleaning. \n\n From office buildings and shopping complexes to schools, hospitals, hotels and corporate campuses, our experienced team provides reliable cleaning with minimal disruption, helping your solar assets perform at their full potential.",
     image: "/images/service/Service_2.avif",
     icon: Building2,
     scope: "",
@@ -72,16 +77,19 @@ const services: Service[] = [
       "Removal of dust, dirt, bird droppings and surface buildup",
       "Flexible scheduling around business operations",
       "Minimal disruption to daily business operations",
-      "Performance-focused cleaning to help maintain maximum efficiency"
+      "Performance-focused cleaning to help maintain maximum efficiency",
     ],
     stats: [],
-    waMsg: "Hello Yavix Solar Cleaning! I'd like to book a Commercial Solar Cleaning service."
+    waMsg:
+      "Hello Yavix Solar Cleaning! I'd like to book a Commercial Solar Cleaning service.",
   },
   {
     id: "industrial",
     title: "Industrial Solar Cleaning",
-    shortDesc: "Factories • Manufacturing Plants • Warehouses • Industrial Parks • Logistics Centers • Processing Units.",
-    longDesc: "Industrial solar installations operate in demanding environments where dust, manufacturing residues, airborne particles, hard water stains and mineral deposits can quickly accumulate on solar panels, reducing energy production and efficiency. Our professional cleaning service uses specialized equipment and proven methods to help maintain optimal performance. \n\n Whether installed on factories, warehouses, industrial parks, logistics hubs or processing units, we help protect your investment and maximize energy generation.",
+    shortDesc:
+      "Factories • Manufacturing Plants • Warehouses • Industrial Parks • Logistics Centers • Processing Units.",
+    longDesc:
+      "Industrial solar installations operate in demanding environments where dust, manufacturing residues, airborne particles, hard water stains and mineral deposits can quickly accumulate on solar panels, reducing energy production and efficiency. Our professional cleaning service uses specialized equipment and proven methods to help maintain optimal performance. \n\n Whether installed on factories, warehouses, industrial parks, logistics hubs or processing units, we help protect your investment and maximize energy generation.",
     image: "/images/service/Service_3.avif",
     icon: Factory,
     scope: "Factories & Warehouses",
@@ -92,17 +100,19 @@ const services: Service[] = [
       "No standing or walking on solar panels",
       "Safe cleaning for large rooftop installations",
       "Scalable solutions for large solar capacities",
-      "Helps maximize return on solar investment"
+      "Helps maximize return on solar investment",
     ],
-    stats: [
-    ],
-    waMsg: "Hello Yavix Solar Cleaning! I'd like to book an Industrial Solar Cleaning service."
+    stats: [],
+    waMsg:
+      "Hello Yavix Solar Cleaning! I'd like to book an Industrial Solar Cleaning service.",
   },
   {
     id: "utility",
     title: "Utility-Scale Solar Farm Cleaning",
-    shortDesc: "Solar Farms • Ground-Mounted Plants • Solar Parks • IPP Projects • Open Access Plants • Captive Power Plants",
-    longDesc: "Utility-scale solar farms depend on clean panels to achieve maximum energy production and plant performance. Dust, environmental contaminants, hard water stains and mineral deposits can reduce generation across large installations. Our professional cleaning service uses efficient large-scale cleaning methods to help maintain optimal energy yield.\n\nWhether serving solar farms, solar parks, ground-mounted plants, utility projects, open access plants or captive power plants, we help maximize energy generation and protect solar assets.",
+    shortDesc:
+      "Solar Farms • Ground-Mounted Plants • Solar Parks • IPP Projects • Open Access Plants • Captive Power Plants",
+    longDesc:
+      "Utility-scale solar farms depend on clean panels to achieve maximum energy production and plant performance. Dust, environmental contaminants, hard water stains and mineral deposits can reduce generation across large installations. Our professional cleaning service uses efficient large-scale cleaning methods to help maintain optimal energy yield.\n\nWhether serving solar farms, solar parks, ground-mounted plants, utility projects, open access plants or captive power plants, we help maximize energy generation and protect solar assets.",
     image: "/images/service/Service_4.avif",
     icon: Sun,
     scope: "Multi-Megawatt Solar Farms",
@@ -113,17 +123,19 @@ const services: Service[] = [
       "High-capacity cleaning for large panel volumes",
       "Removal of dust, dirt, and environmental buildup",
       "Efficient cleaning for utility-scale solar assets",
-      "Helps maximize energy yield and plant performance"
+      "Helps maximize energy yield and plant performance",
     ],
-    stats: [
-    ],
-    waMsg: "Hello Yavix Solar Cleaning! I'd like to book a Utility-Scale Solar Farm Cleaning service."
+    stats: [],
+    waMsg:
+      "Hello Yavix Solar Cleaning! I'd like to book a Utility-Scale Solar Farm Cleaning service.",
   },
   {
     id: "salt-mineral",
     title: "Specialized Salt & Mineral Deposit Removal",
-    shortDesc: "Salt Deposits • Mineral Scaling • Hard Water Stains • Coastal Sites • Industrial Sites • Performance Recovery",
-    longDesc: "Salt and mineral deposits are among the most stubborn contaminants found on solar panels. Caused by coastal environments, industrial emissions, hard water exposure, or sprinkler systems, these deposits can reduce light transmission and lower energy generation over time.\n\nOur specialized cleaning service safely removes salt deposits, mineral scaling and hard water stains using proven techniques and professional equipment. We never stand on panels or use abrasive methods, helping protect your investment and maximize solar performance.",
+    shortDesc:
+      "Salt Deposits • Mineral Scaling • Hard Water Stains • Coastal Sites • Industrial Sites • Performance Recovery",
+    longDesc:
+      "Salt and mineral deposits are among the most stubborn contaminants found on solar panels. Caused by coastal environments, industrial emissions, hard water exposure, or sprinkler systems, these deposits can reduce light transmission and lower energy generation over time.\n\nOur specialized cleaning service safely removes salt deposits, mineral scaling and hard water stains using proven techniques and professional equipment. We never stand on panels or use abrasive methods, helping protect your investment and maximize solar performance.",
     image: "/images/service/Service_5.avif",
     icon: Droplets,
     scope: "Coastal & Hard-Water Regions",
@@ -134,17 +146,19 @@ const services: Service[] = [
       "Safe cleaning without abrasive scrub pads or harsh chemicals",
       "No standing or walking directly on solar panels",
       "Specialized techniques for challenging surface deposits",
-      "Helps restore solar performance affected by buildup"
+      "Helps restore solar performance affected by buildup",
     ],
-    stats: [
-    ],
-    waMsg: "Hello Yavix Solar Cleaning! I'd like to book a Specialized Salt & Mineral Deposit Removal service."
+    stats: [],
+    waMsg:
+      "Hello Yavix Solar Cleaning! I'd like to book a Specialized Salt & Mineral Deposit Removal service.",
   },
   {
     id: "acc",
     title: "Annual Cleaning Contracts (ACC)",
-    shortDesc: "Monthly Plans • Quarterly Plans • Scheduled Cleaning • Priority Service • Multi-Site Coverage • Annual Agreements",
-    longDesc: "Annual Cleaning Contracts (ACC) provide a scheduled and hassle-free solution to keep solar systems operating at peak performance year-round. Our customized cleaning plans help prevent the buildup of dust, dirt, bird droppings, hard water stains and mineral deposits that can reduce energy generation.\n\nSuitable for residential, commercial, industrial and utility-scale installations, our ACC services include scheduled visits and professional cleaning practices to maximize energy production, improve long-term performance and protect your solar investment.",
+    shortDesc:
+      "Monthly Plans • Quarterly Plans • Scheduled Cleaning • Priority Service • Multi-Site Coverage • Annual Agreements",
+    longDesc:
+      "Annual Cleaning Contracts (ACC) provide a scheduled and hassle-free solution to keep solar systems operating at peak performance year-round. Our customized cleaning plans help prevent the buildup of dust, dirt, bird droppings, hard water stains and mineral deposits that can reduce energy generation.\n\nSuitable for residential, commercial, industrial and utility-scale installations, our ACC services include scheduled visits and professional cleaning practices to maximize energy production, improve long-term performance and protect your solar investment.",
     image: "/images/service/Service_6.avif",
     icon: ClipboardCheck,
     scope: "All Solar Installations",
@@ -155,11 +169,11 @@ const services: Service[] = [
       "Consistent year-round solar system performance",
       "Reduced accumulation of dust, dirt, and mineral deposits",
       "Flexible maintenance plans for all system sizes",
-      "Helps maintain maximum efficiency and return on investment (ROI)"
+      "Helps maintain maximum efficiency and return on investment (ROI)",
     ],
-    stats: [
-    ],
-    waMsg: "Hello Yavix Solar Cleaning! I'd like to learn more about the Annual Maintenance Contracts (AMC)."
+    stats: [],
+    waMsg:
+      "Hello Yavix Solar Cleaning! I'd like to learn more about the Annual Maintenance Contracts (AMC).",
   },
 ];
 
@@ -167,7 +181,9 @@ export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [showLeftBtn, setShowLeftBtn] = useState(false);
   const [showRightBtn, setShowRightBtn] = useState(true);
-  const [containerNode, setContainerNode] = useState<HTMLDivElement | null>(null);
+  const [containerNode, setContainerNode] = useState<HTMLDivElement | null>(
+    null,
+  );
 
   const scroll = (direction: "left" | "right") => {
     if (containerNode) {
@@ -246,7 +262,7 @@ export default function ServicesSection() {
 
   const handlePrevService = () => {
     if (selectedService) {
-      const idx = services.findIndex(s => s.id === selectedService.id);
+      const idx = services.findIndex((s) => s.id === selectedService.id);
       const prevIdx = (idx - 1 + services.length) % services.length;
       setSelectedService(services[prevIdx]);
     }
@@ -254,7 +270,7 @@ export default function ServicesSection() {
 
   const handleNextService = () => {
     if (selectedService) {
-      const idx = services.findIndex(s => s.id === selectedService.id);
+      const idx = services.findIndex((s) => s.id === selectedService.id);
       const nextIdx = (idx + 1) % services.length;
       setSelectedService(services[nextIdx]);
     }
@@ -271,7 +287,10 @@ export default function ServicesSection() {
   }, [selectedService]);
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-24 bg-[#f8fafc] border-y border-gray-100 relative overflow-hidden">
+    <section
+      id="services"
+      className="py-12 sm:py-16 md:py-24 bg-[#f8fafc] border-y border-gray-100 relative overflow-hidden"
+    >
       {/* Decorative ambient backgrounds */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-glow pointer-events-none opacity-40 rounded-full" />
       <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-blue-glow pointer-events-none opacity-30 rounded-full" />
@@ -289,23 +308,27 @@ export default function ServicesSection() {
             <span className="inline-block px-5 py-2 rounded-full bg-primary-50 text-primary-600 text-[13px] font-extrabold tracking-widest uppercase border border-primary-100 shrink-0">
               OUR SERVICES
             </span>
-             <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-900 mb-4">
-              <span className="gradient-text">Professional </span>Solar Panel Cleaning
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-primary-900 mb-4">
+              <span className="gradient-text">Professional </span>Solar Panel
+              Cleaning
             </h2>
             <p>
-              Maximize energy output, extend panel life and protect your solar investment with expert cleaning services.
+              Maximize energy output, extend panel life and protect your solar
+              investment with expert cleaning services.
             </p>
           </motion.div>
         </div>
 
         {/* Slider Wrapper with side padding for buttons */}
         <div className="relative px-0 sm:px-14">
-
           {/* Floating Left Button - positioned outside on the left side of the slider */}
           <button
             onClick={() => scroll("left")}
-            className={`hidden sm:flex absolute left-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${showLeftBtn ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
-              }`}
+            className={`hidden sm:flex absolute left-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${
+              showLeftBtn
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-90 pointer-events-none"
+            }`}
             style={{ transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)" }}
             aria-label="Scroll left"
           >
@@ -315,8 +338,11 @@ export default function ServicesSection() {
           {/* Floating Right Button - positioned outside on the right side of the slider */}
           <button
             onClick={() => scroll("right")}
-            className={`hidden sm:flex absolute right-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${showRightBtn ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
-              }`}
+            className={`hidden sm:flex absolute right-0 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full border border-slate-200 bg-white items-center justify-center text-slate-700 hover:bg-primary-50 hover:border-primary-200 hover:text-primary-600 transition-all shadow-md active:scale-95 ${
+              showRightBtn
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-90 pointer-events-none"
+            }`}
             style={{ transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)" }}
             aria-label="Scroll right"
           >
@@ -338,7 +364,6 @@ export default function ServicesSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  whileHover={{ y: -8, boxShadow: "0 20px 40px -15px rgba(0, 102, 255, 0.12)" }}
                   onClick={() => setSelectedService(service)}
                   className="w-[calc(100vw-32px)] sm:w-[320px] shrink-0 snap-center sm:snap-start bg-white border border-slate-100 rounded-3xl p-5 hover:border-primary-200 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
                 >
@@ -379,6 +404,13 @@ export default function ServicesSection() {
             })}
           </div>
 
+          <button
+            onClick={() => scroll("right")}
+            className="sm:hidden absolute right-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-primary-50 hover:text-primary-600 transition-all shadow-md active:scale-95"
+            aria-label="Scroll to next service"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
 
@@ -421,7 +453,8 @@ export default function ServicesSection() {
                     <ChevronLeft className="w-5 h-5" />
                   </button>
                   <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest select-none">
-                    {services.findIndex(s => s.id === selectedService.id) + 1} / {services.length}
+                    {services.findIndex((s) => s.id === selectedService.id) + 1}{" "}
+                    / {services.length}
                   </span>
                   <button
                     onClick={handleNextService}
@@ -442,17 +475,24 @@ export default function ServicesSection() {
               </div>
 
               {/* Scrollable Contents — keyed by service id to automatically reset scroll position when navigating between services */}
-              <div key={selectedService.id} className="flex-1 overflow-y-auto px-6 py-8 md:p-10">
+              <div
+                key={selectedService.id}
+                className="flex-1 overflow-y-auto px-6 py-8 md:p-10"
+              >
                 {/* Main Content Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-8">
                   {/* Left Column: Details */}
                   <div className="md:col-span-7">
-
                     <h2 className="text-3xl md:text-3xl font-black text-slate-900 leading-tight mb-4">
                       {selectedService.title}
                     </h2>
                     {selectedService.longDesc.split("\n\n").map((para, idx) => (
-                      <p key={idx} className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6">{para}</p>
+                      <p
+                        key={idx}
+                        className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6"
+                      >
+                        {para}
+                      </p>
                     ))}
                   </div>
 
@@ -471,7 +511,10 @@ export default function ServicesSection() {
                     {/* Statistics Grid */}
                     <div className="grid grid-cols-3 gap-3">
                       {selectedService.stats.map((stat) => (
-                        <div key={stat.label} className="bg-slate-50/80 border border-slate-100 rounded-xl p-3 text-center">
+                        <div
+                          key={stat.label}
+                          className="bg-slate-50/80 border border-slate-100 rounded-xl p-3 text-center"
+                        >
                           <span className="block text-[9px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                             {stat.label}
                           </span>
@@ -483,7 +526,6 @@ export default function ServicesSection() {
                     </div>
                   </div>
                 </div>
-
 
                 {/* Checklist of Features */}
                 <div className="mb-10">
@@ -519,7 +561,8 @@ export default function ServicesSection() {
                         Ready to maximize your solar performance?
                       </h4>
                       <p className="text-[13px] text-slate-500 font-semibold">
-                        Book a professional solar cleaning service or request a custom quote from our team today.
+                        Book a professional solar cleaning service or request a
+                        custom quote from our team today.
                       </p>
                     </div>
                     <a
@@ -529,18 +572,19 @@ export default function ServicesSection() {
                       className="inline-flex w-full md:w-auto items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-[18px] font-extrabold transition-all duration-200 active:scale-95 shadow-lg shadow-emerald-500/25 whitespace-nowrap"
                     >
                       Book on
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-8 h-8" />
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                        alt="WhatsApp"
+                        className="w-8 h-8"
+                      />
                     </a>
-
                   </div>
                 </div>
-
               </div>
             </motion.div>
           </div>
-        )
-        }
-      </AnimatePresence >
-    </section >
+        )}
+      </AnimatePresence>
+    </section>
   );
 }

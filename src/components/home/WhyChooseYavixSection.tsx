@@ -74,7 +74,6 @@ export default function WhyChooseYavixSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(0, 102, 255, 0.2)" }}
               className="w-full p-6 rounded-2xl bg-white border border-gray-100 shadow-sm group transition-all duration-300 flex flex-col hover:border-primary-200"
             >
               {/* Colorful Icon Box */}

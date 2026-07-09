@@ -16,6 +16,7 @@ export default function HeroSection() {
         loop
         muted
         playsInline
+        preload="metadata"
       >
         <source src="/Video/12646455-hd_1920_1080_60fps.mp4" type="video/mp4" />
       </video>

@@ -257,7 +257,7 @@ export default function ReviewsSection() {
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />)}
                 </div>
-                <p className="text-[11px] text-gray-400 font-bold mt-0.5">91 Verified Customer Reviews</p>
+                <p className="text-[11px] text-gray-400 font-bold mt-0.5">93 Verified Customer Reviews</p>
               </div>
             </div>
           </div>
@@ -350,6 +350,7 @@ export default function ReviewsSection() {
             </button>
 
           </div>
+
         </div>
       </div>
     </section>

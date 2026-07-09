@@ -44,21 +44,21 @@ export default function Clients() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {clients.map((client) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
+          {clients.map((client, index) => (
             <motion.div
               key={client.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="flex h-32 items-center justify-center rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              initial={{ opacity: 0, y: 20, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="flex h-28 sm:h-32 items-center justify-center rounded-2xl border border-gray-200 bg-white p-3 sm:p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <img
                 src={client.image}
                 alt={client.name}
                 loading="lazy"
-                className="max-h-20 w-auto object-contain"
+                className="max-h-14 sm:max-h-20 w-auto object-contain"
                 draggable={false}
               />
             </motion.div>

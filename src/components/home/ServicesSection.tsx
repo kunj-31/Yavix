@@ -181,9 +181,12 @@ export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [showLeftBtn, setShowLeftBtn] = useState(false);
   const [showRightBtn, setShowRightBtn] = useState(true);
-  const [containerNode, setContainerNode] = useState<HTMLDivElement | null>(
-    null,
-  );
+  const [containerNode, setContainerNode] = useState<HTMLDivElement | null>(null);
+  const [mobileContainerNode, setMobileContainerNode] = useState<HTMLDivElement | null>(null);
+  const [hasAnimatedHint, setHasAnimatedHint] = useState(false);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const mobileServices = [...services, ...services];
+  const [isMobileView, setIsMobileView] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     if (containerNode) {
@@ -199,6 +202,20 @@ export default function ServicesSection() {
         behavior: "smooth",
       });
     }
+  };
+
+  const scrollMobileServicesTo = (index: number) => {
+    if (!mobileContainerNode) return;
+
+    const firstCard = mobileContainerNode.firstElementChild as HTMLElement | null;
+    const cardWidth = firstCard
+      ? firstCard.getBoundingClientRect().width + 16
+      : mobileContainerNode.clientWidth;
+
+    mobileContainerNode.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
   };
 
   const handleScroll = () => {
@@ -222,6 +239,44 @@ export default function ServicesSection() {
       };
     }
   }, [containerNode]);
+
+  // Auto-scroll hint animation removed as requested
+
+  useEffect(() => {
+    if (!mobileContainerNode) return;
+
+    const onMobileScroll = () => {
+      const firstCard = mobileContainerNode.firstElementChild as HTMLElement | null;
+      const cardWidth = firstCard
+        ? firstCard.getBoundingClientRect().width + 16
+        : mobileContainerNode.clientWidth;
+
+      setActiveCardIndex(
+        Math.max(0, Math.min(services.length - 1, Math.round(mobileContainerNode.scrollLeft / cardWidth)))
+      );
+    };
+
+    onMobileScroll();
+    mobileContainerNode.addEventListener("scroll", onMobileScroll, { passive: true });
+
+    return () => {
+      mobileContainerNode.removeEventListener("scroll", onMobileScroll);
+    };
+  }, [mobileContainerNode]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    setIsMobileView(window.innerWidth < 640);
+
+    const frame = window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        setIsMobileView(window.innerWidth < 640);
+      }, 10);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   useEffect(() => {
     if (selectedService) {
@@ -289,7 +344,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-12 sm:py-16 md:py-24 bg-[#f8fafc] border-y border-gray-100 relative overflow-hidden"
+      className="pt-24 pb-12 sm:py-16 md:py-24 bg-[#f8fafc] border-y border-gray-100 relative overflow-hidden"
     >
       {/* Decorative ambient backgrounds */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-glow pointer-events-none opacity-40 rounded-full" />
@@ -315,29 +370,83 @@ export default function ServicesSection() {
 
         {/* Slider Wrapper with side padding for buttons */}
         <div className="relative px-0 sm:px-14">
-          <button
-            onClick={() => scroll("left")}
-            className={`absolute left-2 top-1/2 -translate-y-1/2 z-30 flex sm:hidden items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-md transition-all active:scale-95 ${
-              showLeftBtn
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-90 pointer-events-none"
-            }`}
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
+          <div className="sm:hidden -mx-4 px-4">
+            <div
+              ref={setMobileContainerNode}
+              className="flex w-full touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-2 scroll-smooth scrollbar-none"
+              style={{
+                WebkitOverflowScrolling: "touch",
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+                scrollBehavior: "smooth",
+              }}
+            >
+              {services.map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <motion.div
+                    key={service.id}
+                    onClick={() => setSelectedService(service)}
+                    initial={{ opacity: 0, y: 32, scale: 0.96 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                      duration: 0.45,
+                      ease: [0.22, 1, 0.36, 1],
+                      delay: index * 0.06,
+                    }}
+                    className="w-[calc(100vw-44px)] shrink-0 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm group cursor-pointer flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 relative bg-slate-50">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
 
-          <button
-            onClick={() => scroll("right")}
-            className={`absolute right-2 top-1/2 -translate-y-1/2 z-30 flex sm:hidden items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-md transition-all active:scale-95 ${
-              showRightBtn
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-90 pointer-events-none"
-            }`}
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
+                      <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center text-primary-600 mb-4 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+
+                      <h3 className="font-extrabold text-[18px] text-slate-900 leading-snug mb-2.5 group-hover:text-primary-600 transition-colors">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-[13.5px] text-slate-500 font-medium leading-relaxed mb-5">
+                        {service.shortDesc}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between border-t border-slate-50 pt-4 mt-auto">
+                      <span className="inline-flex items-center gap-1 text-[12.5px] font-extrabold text-primary-500 group-hover:text-primary-600 transition-colors">
+                        Learn More
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+            <div className="mt-5 flex items-center justify-center gap-2">
+              {services.map((service, i) => (
+                <button
+                  key={service.id}
+                  type="button"
+                  onClick={() => scrollMobileServicesTo(i)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === activeCardIndex
+                      ? "w-8 bg-gradient-to-r from-primary-600 to-cyan-400 shadow-[0_6px_14px_rgba(0,102,255,0.28)]"
+                      : "w-2 bg-slate-300"
+                  }`}
+                  aria-label={`Show ${service.title}`}
+                  aria-current={i === activeCardIndex ? "true" : undefined}
+                />
+              ))}
+            </div>
+          </div>
 
           {/* Floating Left Button - positioned outside on the left side of the slider */}
           <button
@@ -370,7 +479,7 @@ export default function ServicesSection() {
           {/* Horizontal Scrollable Container */}
           <div
             ref={setContainerNode}
-            className="flex gap-8 overflow-x-auto pb-8 scroll-smooth scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory"
+            className="hidden sm:flex gap-8 overflow-x-auto pb-8 scroll-smooth scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {services.map((service) => {
@@ -418,13 +527,6 @@ export default function ServicesSection() {
             })}
           </div>
 
-          <button
-            onClick={() => scroll("right")}
-            className="sm:hidden absolute right-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-primary-50 hover:text-primary-600 transition-all shadow-md active:scale-95"
-            aria-label="Scroll to next service"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
         </div>
       </div>
 

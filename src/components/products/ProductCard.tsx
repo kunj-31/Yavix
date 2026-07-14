@@ -48,7 +48,7 @@ export default function ProductCard({
           aspectRatio: "4/3",
           borderRadius: "14px",
           overflow: "hidden",
-          background: "#f8fafc",
+          background: "transparent",
           border: "1px solid #f1f5f9",
           marginBottom: "20px",
         }}

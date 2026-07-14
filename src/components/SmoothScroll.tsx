@@ -19,24 +19,18 @@ export default function SmoothScroll({
       return;
     }
 
-    const isTouchDevice =
-      window.matchMedia("(pointer: coarse)").matches ||
-      window.matchMedia("(max-width: 768px)").matches;
-
     window.__yavixLenis?.destroy();
 
     window.__yavixLenis = new Lenis({
-      duration: isTouchDevice ? 0.85 : 1.35,
-      easing: (t: number) => 1 - Math.pow(1 - t, 4),
+      lerp: 0.05,
       orientation: "vertical",
       gestureOrientation: "vertical",
       autoRaf: true,
       smoothWheel: true,
-      syncTouch: isTouchDevice,
-      syncTouchLerp: isTouchDevice ? 0.12 : 0.045,
-      touchInertiaExponent: isTouchDevice ? 1.2 : 1.15,
-      wheelMultiplier: 1,
-      touchMultiplier: isTouchDevice ? 1 : 0.8,
+      syncTouch: true,
+      syncTouchLerp: 0.05,
+      touchMultiplier: 1.8,
+      wheelMultiplier: 1.1,
       infinite: false,
       anchors: {
         offset: -96,

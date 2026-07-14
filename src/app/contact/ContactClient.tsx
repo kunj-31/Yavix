@@ -9,7 +9,7 @@ export default function ContactClient() {
       {/* Hero */}
       <section className="py-20 bg-hero-gradient">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <motion.div initial={false}>
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-6 border border-primary-100">
               Get in touch
             </span>

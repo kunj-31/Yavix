@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 
 const navLinks = [
@@ -117,28 +116,8 @@ export default function Navbar() {
         </div>
       </header>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: -30,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -30,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 130,
-              damping: 18,
-            }}
-            className="fixed inset-x-0 top-[72px] z-[99] bg-white shadow-2xl border-t border-slate-100 md:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
-          >
+      {menuOpen && (
+        <div className="fixed inset-x-0 top-[72px] z-[99] bg-white shadow-2xl border-t border-slate-100 md:hidden overflow-y-auto max-h-[calc(100vh-80px)]">
 
             <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
               {navLinks.map((link) => (
@@ -166,9 +145,8 @@ export default function Navbar() {
                 Book Cleaning
               </a>
             </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </>
   );
 }

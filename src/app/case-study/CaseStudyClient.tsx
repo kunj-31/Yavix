@@ -17,7 +17,7 @@ export default function CaseStudyClient() {
     <div className="pt-20">
       <section className="section-pad bg-hero-gradient">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <motion.div initial={false}>
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-6 border border-primary-100">Proof of Work</span>
             <h1 className="text-3xl md:text-5xl font-extrabold text-primary-900 mb-4">Real <span className="gradient-text">Results</span>, Real Customers</h1>
             <p className="text-gray-500 text-lg">Documented before/after results from actual Yavix Solar Cleaning projects across Ahmedabad and Gujarat.</p>

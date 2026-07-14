@@ -277,11 +277,8 @@ export default function ReviewsSection() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {visible.map((r, i) => (
-                <motion.div
+                <div
                   key={`${r.name}-${safeCurrent}-${i}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between hover:border-primary-100 group min-h-[280px] text-left"
                 >
                   <div>
@@ -327,7 +324,7 @@ export default function ReviewsSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 

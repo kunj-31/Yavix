@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Zap, Droplets, Leaf, Shield } from "lucide-react";
 
 const benefits = [
   {
     image: "/images/why-cleaning/Essential_1.avif",
     title: "Dust Reduces Performance",
-    desc:"Dust,pollution & mineral deposits can significantly reduce solar panel efficiency.Regular cleaning helps maintain peak output.",
+    desc: "Dust,pollution & mineral deposits can significantly reduce solar panel efficiency.Regular cleaning helps maintain peak output.",
   },
   {
     image: "/images/why-cleaning/Essential_2.avif",
@@ -33,6 +31,7 @@ const stats = [
   { end: 30, suffix: "%", label: "Performance Recovery" },
   { end: 100, suffix: "%", label: "Safety Compliance" },
 ];
+
 function AnimatedNumber({
   end,
   text,
@@ -89,13 +88,7 @@ export default function WhyCleaningSection() {
   return (
     <section className="section-pad bg-[#f7faff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[12px] font-semibold tracking-widest uppercase mb-4 border border-primary-100">
             Why It Matters
           </span>
@@ -109,17 +102,13 @@ export default function WhyCleaningSection() {
             helps restore performance, increase energy generation and extend
             panel life.
           </p>
-        </motion.div>
+        </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-16">
-          {stats.map((s, i) => (
-            <motion.div
+          {stats.map((s) => (
+            <div
               key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
               className="text-center p-4 sm:p-6 lg:p-8 rounded-3xl bg-white border border-primary-100 shadow-glass hover:shadow-card-hover transition-all duration-300"
             >
               <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-primary-600 mb-2">
@@ -128,33 +117,24 @@ export default function WhyCleaningSection() {
               <p className="text-[12px] sm:text-[14px] text-gray-500 font-medium leading-tight">
                 {s.label}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Benefit cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((b, i) => (
-            <motion.div
-              //i want to be title on single line
+          {benefits.map((b) => (
+            <div
               key={b.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              whileHover={{
-                y: -8,
-                boxShadow: "0 25px 50px -12px rgba(0, 102, 255, 0.2)",
-              }}
-              className="p-6 sm:p-7 rounded-3xl bg-white border border-gray-100 shadow-sm group transition-all duration-300 overflow-hidden flex flex-col justify-between h-full hover:border-primary-200"
+              className="p-6 sm:p-7 rounded-3xl bg-white border border-gray-100 shadow-sm group transition-all duration-300 overflow-hidden flex flex-col justify-between h-full hover:border-primary-200 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,102,255,0.2)]"
             >
               <div>
-                {/* Larger, Taller Aspect-4/3 Card Image */}
                 <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-5 relative shadow-md group-hover:scale-[1.02] transition-transform duration-300">
                   <img
                     src={b.image}
                     alt={b.title}
-                    loading="lazy"
+                    loading="eager"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
@@ -165,7 +145,7 @@ export default function WhyCleaningSection() {
                   {b.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

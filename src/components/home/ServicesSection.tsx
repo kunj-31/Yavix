@@ -373,7 +373,7 @@ export default function ServicesSection() {
           <div className="sm:hidden -mx-4 px-4">
             <div
               ref={setMobileContainerNode}
-              className="flex w-full touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-2 scroll-smooth scrollbar-none"
+              className="flex w-full touch-pan-x touch-pan-y gap-4 overflow-x-auto overscroll-x-contain pb-2 scroll-smooth scrollbar-none"
               style={{
                 WebkitOverflowScrolling: "touch",
                 scrollbarWidth: "none",

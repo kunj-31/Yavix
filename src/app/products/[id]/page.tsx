@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PRODUCTS } from "@/lib/products";
+import { SITE_URL } from "@/lib/seo/config";
 import ProductDetailClient from "@/components/products/ProductDetailClient";
 
 interface Props {
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: product.name,
       description: product.tagline,
-      url: `https://yavix.in/products/${product.id}`,
+      url: `${SITE_URL}/products/${product.id}`,
       type: "website",
     },
   };
@@ -57,7 +58,7 @@ export default async function ProductDetailPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
-    "image": product.images.map((img) => `https://yavix.in${img}`),
+    "image": product.images.map((img) => `${SITE_URL}${img}`),
     "description": product.description,
     "brand": {
       "@type": "Brand",

@@ -1,4 +1,4 @@
-export const SITE_URL = "https://yavix.in";
+export const SITE_URL = "https://yavixenergy.com";
 export const SITE_NAME = "Yavix Energy";
 export const BRAND_NAME = "Yavix Solar Cleaning";
 export const WA_NUMBER = "919274371058";

@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import ProductCard from "@/components/products/ProductCard";
 import { PRODUCTS } from "@/lib/products";
+import { SITE_URL } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
   title: "Solar Panel Cleaning Brushes & Equipment | Yavix Solar Cleaning",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Solar Panel Cleaning Brushes & Equipment | Yavix Solar Cleaning",
     description: "Shop professional-grade solar panel cleaning brushes and equipment. High-tensile telescopic brushes.",
-    url: "https://yavix.in/products",
+    url: `${SITE_URL}/products`,
     type: "website",
   }
 };

@@ -32,9 +32,7 @@ export default function HeroSection() {
       >
         <div className="w-full max-w-5xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={false}
             className="mx-auto flex flex-col items-center gap-5 sm:gap-6"
           >
             <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">

@@ -373,7 +373,7 @@ export default function ServicesSection() {
           <div className="sm:hidden -mx-4 px-4">
             <div
               ref={setMobileContainerNode}
-              className="flex w-full touch-pan-x gap-4 overflow-x-auto overscroll-x-contain pb-2 scroll-smooth scrollbar-none"
+              className="flex w-full touch-pan-x touch-pan-y gap-4 overflow-x-auto overscroll-x-contain pb-2 scroll-smooth scrollbar-none"
               style={{
                 WebkitOverflowScrolling: "touch",
                 scrollbarWidth: "none",
@@ -384,17 +384,9 @@ export default function ServicesSection() {
               {services.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
-                  <motion.div
+                  <div
                     key={service.id}
                     onClick={() => setSelectedService(service)}
-                    initial={{ opacity: 0, y: 32, scale: 0.96 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{
-                      duration: 0.45,
-                      ease: [0.22, 1, 0.36, 1],
-                      delay: index * 0.06,
-                    }}
                     className="w-[calc(100vw-44px)] shrink-0 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm group cursor-pointer flex flex-col justify-between"
                   >
                     <div>
@@ -426,7 +418,7 @@ export default function ServicesSection() {
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>

@@ -101,7 +101,7 @@ export default function ProductsPage() {
           width: 100%;
           aspect-ratio: 4 / 3;
           overflow: hidden;
-          background: #f1f5f9;
+          background: transparent;
           flex-shrink: 0;
         }
         .pc-img {
@@ -263,9 +263,7 @@ export default function ProductsPage() {
           z-index: 1000;
           display: flex; align-items: center; justify-content: center;
           padding: 20px;
-          animation: dmFadeIn .2s ease;
         }
-        @keyframes dmFadeIn { from { opacity: 0 } to { opacity: 1 } }
 
         .dm-box {
           background: #fff;
@@ -275,7 +273,6 @@ export default function ProductsPage() {
           max-height: 90vh;
           overflow-y: auto;
           position: relative;
-          animation: dmSlide .25s ease;
           box-shadow: 0 32px 80px rgba(0,0,0,.2);
           scrollbar-width: thin;
           scrollbar-color: #cbd5e1 transparent;
@@ -287,10 +284,6 @@ export default function ProductsPage() {
           border-radius: 100px;
         }
         .dm-box::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        @keyframes dmSlide {
-          from { transform: translateY(28px); opacity: 0 }
-          to   { transform: translateY(0);    opacity: 1 }
-        }
 
         /* Close button */
         .dm-close {
@@ -333,14 +326,13 @@ export default function ProductsPage() {
           .dm-gallery { padding-right: 0; border-right: none; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px; }
         }
 
-        /* Main image — square box, fill works correctly here */
         .dm-main-wrap {
           position: relative;
           width: 100%;
           aspect-ratio: 1 / 1;
           border-radius: 12px;
           overflow: hidden;
-          background: #f8fafc;
+          background: transparent;
           border: 1px solid #e2e8f0;
         }
         .dm-main-img {
@@ -356,7 +348,7 @@ export default function ProductsPage() {
           overflow: hidden;
           border: 2px solid #e2e8f0;
           cursor: pointer;
-          background: #f1f5f9;
+          background: transparent;
           transition: border-color .18s;
           flex-shrink: 0;
         }

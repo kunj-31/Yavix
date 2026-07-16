@@ -37,7 +37,7 @@ export default function AboutPage() {
       <section className="py-12 md:py-16 bg-hero-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <motion.div initial={false}>
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-600 text-[13px] font-bold tracking-widest uppercase mb-6 border border-primary-100 shadow-sm">
                 About Us
               </span>

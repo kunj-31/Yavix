@@ -79,10 +79,15 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary-500 mt-1 shrink-0" />
-                <span className="text-sm text-gray-500 leading-relaxed">
+                <a
+                  href="https://maps.google.com/?q=36,+Bhagyoday+Society,+Thakkarbapanagar+Road,+Ahmedabad,+Gujarat+382350"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-primary-600 transition-colors leading-relaxed"
+                >
                   36, Bhagyoday Society, Thakkarbapanagar Road, <br />
                   Ahmedabad, Gujarat 382350
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-2 mt-4">
                 <a href="https://facebook.com/profile.php?id=61574586806347" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200">

@@ -112,31 +112,9 @@ body {
   background-clip: text;
 }
 
-/* Shine overlay effect */
-.shine-overlay {
-  position: relative;
-  overflow: hidden;
-}
+/* Shine overlay effect — disabled to prevent white flash sweep */
 .shine-overlay::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  transform: skewX(-15deg);
-  animation: shine 3s ease-in-out infinite;
-}
-
-@keyframes shine {
-  0%   { left: -100%; }
-  100% { left: 200%; }
+  content: none;
 }
 
 /* Floating particle dots */

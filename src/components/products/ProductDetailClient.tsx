@@ -83,7 +83,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 <button
                   key={index}
                   onClick={() => setCurrentImgIdx(index)}
-                  className={`relative w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 bg-slate-50 flex-shrink-0 transition-all ${
+                  className={`relative w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden border-2 bg-transparent flex-shrink-0 transition-all ${
                     currentImgIdx === index
                       ? "border-[#0066ff] ring-2 ring-blue-100"
                       : "border-slate-200 hover:border-slate-400"
@@ -101,7 +101,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             </div>
 
             {/* Large Main Image Box (Right of thumbnails) */}
-            <div className="relative flex-1 aspect-square bg-[#fcfbf9] rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center group order-1 md:order-2">
+            <div className="relative flex-1 aspect-square bg-transparent rounded-2xl border border-slate-100 overflow-hidden flex items-center justify-center group order-1 md:order-2">
               <Image
                 src={product.images[currentImgIdx]}
                 alt={product.name}

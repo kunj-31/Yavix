@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import {
   getServiceBySlug,
   getServiceSlugs,
+  getCommercialServices,
   type SeoService,
 } from "@/lib/seo/services";
 import { SITE_URL, BRAND_NAME } from "@/lib/seo/config";
@@ -16,6 +17,7 @@ import SeoCtaSection from "@/components/seo/SeoCtaSection";
 import FaqSection from "@/components/seo/FaqSection";
 import InternalLinks from "@/components/seo/InternalLinks";
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -148,6 +150,39 @@ function ServiceContent({ service }: { service: SeoService }) {
                 scratch-free results with demineralized water and certified safety practices.
               </p>
             </div>
+
+            {(service.group === "commercial" ||
+              service.slug === "commercial-solar-panel-cleaning" ||
+              service.slug === "industrial-solar-panel-cleaning") && (
+              <section className="my-10 rounded-3xl bg-white border border-primary-100 p-6 sm:p-8">
+                <h2 className="text-xl font-extrabold text-primary-900 mb-2">
+                  Commercial Property Types We Clean
+                </h2>
+                <p className="text-sm text-gray-500 mb-5">
+                  Dedicated pages for every commercial keyword — office, hospital, school, mall,
+                  warehouse, hotel and factory solar panel cleaning in Ahmedabad.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {getCommercialServices()
+                    .filter((s) => s.slug !== service.slug)
+                    .map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/services/${s.slug}`}
+                        className="px-3 py-2 rounded-xl bg-primary-50 text-primary-700 text-xs font-semibold border border-primary-100 hover:bg-primary-100 transition-colors"
+                      >
+                        {s.h1.replace(" in Ahmedabad", "")}
+                      </Link>
+                    ))}
+                  <Link
+                    href="/services/commercial-solar-panel-cleaning"
+                    className="px-3 py-2 rounded-xl bg-primary-500 text-white text-xs font-semibold hover:bg-primary-600 transition-colors"
+                  >
+                    All Commercial Cleaning
+                  </Link>
+                </div>
+              </section>
+            )}
 
             <SeoCtaSection serviceName={service.h1} />
             <FaqSection faqs={service.faqs} />

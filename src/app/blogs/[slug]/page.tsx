@@ -7,6 +7,8 @@ import { SITE_URL, BRAND_NAME } from "@/lib/seo/config";
 import { articleSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -146,10 +148,6 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
 
           <article className="bg-white border border-slate-100 rounded-3xl p-6 sm:p-10 md:p-14 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0066ff] text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100">
-              {post.category}
-            </span>
-
             <h1 className="text-2xl sm:text-4xl md:text-[40px] font-black text-slate-900 leading-tight tracking-tight mb-6">
               {post.title}
             </h1>
@@ -178,7 +176,9 @@ export default async function BlogPostPage({ params }: Props) {
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 flex items-center gap-1">
                 <Tag className="w-3.5 h-3.5" /> Tags:
               </span>
-              {post.tags.map((tag) => (
+              {post.tags
+                .filter((tag) => !/^local(\s*seo)?$/i.test(tag.trim()))
+                .map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1 rounded-lg bg-slate-100 text-slate-600 text-xs font-semibold"

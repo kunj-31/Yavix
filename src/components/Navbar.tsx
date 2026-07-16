@@ -14,6 +14,9 @@ const navLinks = [
       { label: "All Services", href: "/services" },
       { label: "Residential Cleaning", href: "/services/residential-solar-panel-cleaning" },
       { label: "Commercial Cleaning", href: "/services/commercial-solar-panel-cleaning" },
+      { label: "Office Cleaning", href: "/services/office-solar-panel-cleaning-ahmedabad" },
+      { label: "Hospital Cleaning", href: "/services/hospital-solar-panel-cleaning-ahmedabad" },
+      { label: "Factory Cleaning", href: "/services/factory-solar-panel-cleaning-ahmedabad" },
       { label: "Industrial Cleaning", href: "/services/industrial-solar-panel-cleaning" },
       { label: "Solar AMC", href: "/services/solar-panel-amc" },
     ],
@@ -22,6 +25,7 @@ const navLinks = [
   { label: "Products", href: "/products" },
   { label: "Case Studies", href: "/case-study" },
   { label: "Blogs", href: "/blogs" },
+  { label: "Guides", href: "/guides" },
   { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "/contact" },
 ];

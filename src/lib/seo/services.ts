@@ -10,6 +10,8 @@ export interface SeoService {
   process: { step: string; desc: string }[];
   industries: string[];
   faqs: { question: string; answer: string }[];
+  /** core = main services; commercial = niche commercial landing pages */
+  group?: "core" | "commercial";
 }
 
 export const SEO_SERVICES: SeoService[] = [
@@ -77,10 +79,20 @@ export const SEO_SERVICES: SeoService[] = [
     title: "Commercial Solar Panel Cleaning in Ahmedabad",
     h1: "Commercial Solar Panel Cleaning in Ahmedabad",
     metaDescription:
-      "Office, hospital, school, mall and hotel solar panel cleaning in Ahmedabad. Enterprise-grade cleaning with flexible scheduling. Get a commercial quote.",
-    keywords: ["commercial solar panel cleaning Ahmedabad", "office solar panel cleaning Ahmedabad", "hospital solar panel cleaning Ahmedabad", "mall solar panel cleaning Ahmedabad"],
+      "Commercial solar panel cleaning in Ahmedabad for offices, hospitals, schools, malls, hotels and warehouses. Enterprise scheduling and AMC. Get a quote.",
+    keywords: [
+      "commercial solar panel cleaning Ahmedabad",
+      "office solar panel cleaning Ahmedabad",
+      "hospital solar panel cleaning Ahmedabad",
+      "school solar panel cleaning Ahmedabad",
+      "mall solar panel cleaning Ahmedabad",
+      "warehouse solar panel cleaning Ahmedabad",
+      "hotel solar panel cleaning Ahmedabad",
+      "factory solar panel cleaning Ahmedabad",
+    ],
     image: "/images/service/Service_2.avif",
-    intro: "Commercial solar assets in Ahmedabad require consistent maintenance to protect ROI. Yavix provides commercial solar panel cleaning for offices, hospitals, schools, colleges, hotels, malls, warehouses and business parks with minimal operational disruption.",
+    intro:
+      "Commercial solar panel cleaning in Ahmedabad from Yavix covers every major property type: offices, hospitals, schools, colleges, malls, hotels, warehouses and factories. Dust and pollution cut commercial solar ROI fast — our enterprise crews deliver purified-water cleaning with flexible after-hours scheduling and multi-site AMC contracts. Explore dedicated pages for office, hospital, school, mall, warehouse, hotel and factory solar cleaning linked below.",
     benefits: ["After-hours and weekend scheduling", "Multi-site corporate contracts", "Compliance-focused safety protocols", "Documented cleaning reports", "High-volume rooftop and carport arrays"],
     process: [
       { step: "Site Walkthrough", desc: "Identify array layout, inverter locations and safety zones." },
@@ -88,11 +100,13 @@ export const SEO_SERVICES: SeoService[] = [
       { step: "Zone-by-Zone Clean", desc: "Systematic cleaning across rooftops and carports." },
       { step: "Handover Report", desc: "Before/after photos and maintenance recommendations." },
     ],
-    industries: ["Office buildings", "Hospitals", "Schools & colleges", "Hotels", "Shopping malls", "Warehouses"],
+    industries: ["Office buildings", "Hospitals", "Schools & colleges", "Hotels", "Shopping malls", "Warehouses", "Factories"],
     faqs: [
       { question: "Do you clean solar carports and canopies?", answer: "Yes. We clean rooftop, carport, canopy and ground-mounted commercial arrays." },
       { question: "Can you service multiple branches?", answer: "Yes. We offer multi-location AMC contracts across Ahmedabad and nearby cities." },
+      { question: "Which commercial property types do you cover?", answer: "Offices, hospitals, schools, malls, hotels, warehouses and factories — each with a dedicated service page for local SEO and tailored scheduling." },
     ],
+    group: "core",
   },
   {
     slug: "industrial-solar-panel-cleaning",
@@ -220,6 +234,254 @@ export const SEO_SERVICES: SeoService[] = [
     faqs: [
       { question: "Is solar inspection free?", answer: "We offer complimentary inspection when you book a cleaning service. Standalone audits are available on request." },
     ],
+    group: "core",
+  },
+
+  // ── Point 4: Commercial niche landing pages ──
+  {
+    slug: "office-solar-panel-cleaning-ahmedabad",
+    title: "Office Solar Panel Cleaning in Ahmedabad",
+    h1: "Office Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Office solar panel cleaning in Ahmedabad for IT parks, corporate campuses and business towers. Flexible after-hours scheduling. Book a commercial quote.",
+    keywords: [
+      "office solar panel cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+      "corporate solar cleaning Ahmedabad",
+      "IT park solar panel cleaning",
+    ],
+    image: "/images/service/Service_2.avif",
+    intro:
+      "Office buildings and IT parks across SG Highway, Prahlad Nagar, Satellite and Thaltej rely on rooftop and carport solar to cut commercial electricity costs. Dust and pollution quickly reduce output. Yavix delivers professional office solar panel cleaning in Ahmedabad with after-hours and weekend slots so your operations stay uninterrupted. We use demineralized water, soft brushes and safety harnesses — never standing on panels — and provide before/after documentation for facility managers.",
+    benefits: [
+      "After-hours & weekend cleaning windows",
+      "Multi-tower / multi-branch corporate AMC",
+      "Rooftop and solar carport coverage",
+      "Facility-manager friendly reports",
+      "Minimal disruption to office operations",
+    ],
+    process: [
+      { step: "Site Access Coordination", desc: "We align with security and facility teams for roof/carport access." },
+      { step: "Safety Setup", desc: "Harnesses, zone marking and PPE for high-rise or terrace arrays." },
+      { step: "Professional Wash", desc: "Scratch-free cleaning with purified water across all strings." },
+      { step: "Handover", desc: "Photos, notes and recommended cleaning frequency for your campus." },
+    ],
+    industries: ["IT parks", "Corporate offices", "Business towers", "Co-working campuses", "Bank buildings"],
+    faqs: [
+      { question: "Can you clean office solar carports?", answer: "Yes. We clean rooftop and carport/canopy arrays common at office campuses in Ahmedabad." },
+      { question: "Do you offer AMC for multiple office locations?", answer: "Yes. Corporate AMC covers multiple branches across Ahmedabad and nearby cities." },
+    ],
+    group: "commercial",
+  },
+  {
+    slug: "hospital-solar-panel-cleaning-ahmedabad",
+    title: "Hospital Solar Panel Cleaning in Ahmedabad",
+    h1: "Hospital Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Hospital solar panel cleaning in Ahmedabad with hygiene-aware scheduling and safety compliance. Keep medical campus solar at peak output.",
+    keywords: [
+      "hospital solar panel cleaning Ahmedabad",
+      "healthcare solar cleaning Ahmedabad",
+      "clinic solar panel cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+    ],
+    image: "/images/service/Service_2.avif",
+    intro:
+      "Hospitals and healthcare campuses need reliable solar generation to offset high daytime loads. Bird droppings, dust and pollution on medical rooftops reduce output and create hotspot risks. Yavix provides hospital solar panel cleaning in Ahmedabad with coordinated scheduling around sensitive operations, full safety compliance and documented visits suitable for facility and biomedical engineering teams.",
+    benefits: [
+      "Scheduling that respects hospital operations",
+      "Safety-certified crew with harnesses",
+      "Bird dropping & dust removal focus",
+      "Documented cleaning logs for audits",
+      "AMC plans for continuous uptime",
+    ],
+    process: [
+      { step: "Facility Briefing", desc: "Coordinate with hospital engineering / facility management." },
+      { step: "Restricted-Zone Planning", desc: "Define safe work zones near patient-care areas." },
+      { step: "Clinical-Grade Care Clean", desc: "Soft-brush wash with purified water; no abrasive chemicals." },
+      { step: "Compliance Report", desc: "Visit log, photos and next-schedule recommendation." },
+    ],
+    industries: ["Hospitals", "Multispecialty clinics", "Diagnostic centres", "Medical colleges"],
+    faqs: [
+      { question: "Do you work with hospital facility teams?", answer: "Yes. We follow site SOPs, badge/access rules and preferred time windows." },
+      { question: "How often should hospital panels be cleaned?", answer: "Typically every 10–14 days in Ahmedabad; more often if bird activity is high." },
+    ],
+    group: "commercial",
+  },
+  {
+    slug: "school-solar-panel-cleaning-ahmedabad",
+    title: "School Solar Panel Cleaning in Ahmedabad",
+    h1: "School & College Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "School solar panel cleaning in Ahmedabad for schools, colleges and campuses. Safe weekend scheduling. Improve campus solar efficiency.",
+    keywords: [
+      "school solar panel cleaning Ahmedabad",
+      "college solar panel cleaning Ahmedabad",
+      "campus solar cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+    ],
+    image: "/images/service/Service_1.avif",
+    intro:
+      "Schools and colleges across Ahmedabad use rooftop solar to lower electricity costs and support green-campus goals. Dust and bird droppings reduce generation during peak classroom hours. Yavix offers school solar panel cleaning in Ahmedabad with preferred weekend and holiday slots, child-safe work practices and clear communication with school administration.",
+    benefits: [
+      "Weekend / holiday preferred slots",
+      "Safety-first crews on campus roofs",
+      "Affordable AMC for educational institutions",
+      "Supports green-campus sustainability goals",
+      "Scratch-free purified water cleaning",
+    ],
+    process: [
+      { step: "Admin Coordination", desc: "Plan around exams, events and school hours." },
+      { step: "Campus Safety Setup", desc: "Secure access and keep students clear of work zones." },
+      { step: "Full Array Clean", desc: "Clean all rooftop strings with soft brushes and demineralized water." },
+      { step: "Report to Admin", desc: "Share photos and recommended frequency for the campus." },
+    ],
+    industries: ["Schools", "Colleges", "Universities", "Coaching campuses", "Hostels"],
+    faqs: [
+      { question: "Can cleaning happen on Sundays?", answer: "Yes. Weekend and holiday slots are ideal for schools and colleges." },
+      { question: "Do you cover college hostels too?", answer: "Yes. Any campus rooftop or carport solar array in Ahmedabad can be included." },
+    ],
+    group: "commercial",
+  },
+  {
+    slug: "mall-solar-panel-cleaning-ahmedabad",
+    title: "Mall Solar Panel Cleaning in Ahmedabad",
+    h1: "Mall & Shopping Complex Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Mall solar panel cleaning in Ahmedabad for shopping centres and retail complexes. Large-array cleaning with flexible off-peak scheduling.",
+    keywords: [
+      "mall solar panel cleaning Ahmedabad",
+      "shopping complex solar cleaning Ahmedabad",
+      "retail solar panel cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+    ],
+    image: "/images/service/Service_2.avif",
+    intro:
+      "Shopping malls and retail complexes run large rooftop solar plants that suffer heavy dust and pollution buildup along busy corridors like SG Highway and central Ahmedabad. Yavix provides mall solar panel cleaning in Ahmedabad with scalable crews, night/early-morning windows and documentation for mall operations and sustainability teams.",
+    benefits: [
+      "Large commercial array capacity",
+      "Off-peak / night scheduling options",
+      "Minimal disruption to mall operations",
+      "Before/after performance documentation",
+      "Enterprise AMC contracts",
+    ],
+    process: [
+      { step: "Ops Coordination", desc: "Align with mall facility and security management." },
+      { step: "Zone Mapping", desc: "Split large roofs into cleanable zones for efficiency." },
+      { step: "High-Volume Clean", desc: "Deploy team with water-fed poles and soft brushes." },
+      { step: "Ops Handover", desc: "Photos, notes and next AMC visit date." },
+    ],
+    industries: ["Shopping malls", "Retail plazas", "Hypermarkets", "Mixed-use complexes"],
+    faqs: [
+      { question: "Can you handle very large mall rooftops?", answer: "Yes. We scale crew size to array area and complete zone-by-zone." },
+      { question: "Do you clean after events or festivals?", answer: "Yes. Extra visits can be booked after high-dust periods or construction nearby." },
+    ],
+    group: "commercial",
+  },
+  {
+    slug: "warehouse-solar-panel-cleaning-ahmedabad",
+    title: "Warehouse Solar Panel Cleaning in Ahmedabad",
+    h1: "Warehouse Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Warehouse solar panel cleaning in Ahmedabad for logistics hubs and storage facilities. Remove dust and industrial fallout. Book AMC.",
+    keywords: [
+      "warehouse solar panel cleaning Ahmedabad",
+      "warehouse solar cleaning Ahmedabad",
+      "logistics solar panel cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+    ],
+    image: "/images/service/Service_3.avif",
+    intro:
+      "Warehouses and logistics hubs in Ahmedabad — including Narol, Vatva, Changodar and Sanand corridors — accumulate road dust and industrial fallout that slash solar yield. Yavix warehouse solar panel cleaning restores output on large shed roofs with efficient crew deployment and schedules that work around loading docks and shift timings.",
+    benefits: [
+      "Built for large shed / metal-roof arrays",
+      "Handles heavy dust and industrial soiling",
+      "Flexible around warehouse shift operations",
+      "AMC for logistics & 3PL operators",
+      "Safety compliance on high roofs",
+    ],
+    process: [
+      { step: "Roof & Access Survey", desc: "Assess roof type, height and loading-bay constraints." },
+      { step: "Safety Plan", desc: "Harnesses and fall protection for warehouse heights." },
+      { step: "Deep Dust Clean", desc: "Multi-pass wash for fine dust common on logistics roofs." },
+      { step: "Ops Report", desc: "Document recovery and set AMC cadence." },
+    ],
+    industries: ["Warehouses", "3PL hubs", "Cold storage", "Distribution centres", "Godowns"],
+    faqs: [
+      { question: "How often should warehouse panels be cleaned?", answer: "Often weekly or bi-weekly near industrial corridors due to heavy dust." },
+      { question: "Do you clean metal-shed rooftop mounts?", answer: "Yes. We are experienced with typical warehouse roof mounting systems." },
+    ],
+    group: "commercial",
+  },
+  {
+    slug: "hotel-solar-panel-cleaning-ahmedabad",
+    title: "Hotel Solar Panel Cleaning in Ahmedabad",
+    h1: "Hotel Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Hotel solar panel cleaning in Ahmedabad for hotels and resorts. Discreet scheduling, guest-friendly operations, peak solar efficiency.",
+    keywords: [
+      "hotel solar panel cleaning Ahmedabad",
+      "resort solar panel cleaning Ahmedabad",
+      "hospitality solar cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+    ],
+    image: "/images/service/Service_2.avif",
+    intro:
+      "Hotels need quiet, discreet solar maintenance that never disturbs guests. Dust and bird droppings on hotel rooftops reduce generation used for lighting, HVAC offset and hot water systems. Yavix provides hotel solar panel cleaning in Ahmedabad with early-morning slots, professional appearance standards and reliable AMC for hospitality groups.",
+    benefits: [
+      "Guest-friendly early-morning scheduling",
+      "Discreet, professional crew conduct",
+      "Bird dropping & dust focus for rooftops",
+      "Chain / multi-property AMC available",
+      "Purified water — no white stain risk",
+    ],
+    process: [
+      { step: "GM / Engineering Sync", desc: "Confirm time windows around occupancy and events." },
+      { step: "Quiet Operations", desc: "Low-disruption cleaning with clear roof access paths." },
+      { step: "Full Clean", desc: "Soft-brush wash of all hotel rooftop arrays." },
+      { step: "Engineering Report", desc: "Photos and schedule for hospitality maintenance teams." },
+    ],
+    industries: ["Hotels", "Resorts", "Serviced apartments", "Banquet venues"],
+    faqs: [
+      { question: "Will cleaning disturb guests?", answer: "We schedule early mornings and keep noise and visibility minimal." },
+      { question: "Can hotel chains get one AMC?", answer: "Yes. Multi-property hospitality AMC is available across Ahmedabad." },
+    ],
+    group: "commercial",
+  },
+  {
+    slug: "factory-solar-panel-cleaning-ahmedabad",
+    title: "Factory Solar Panel Cleaning in Ahmedabad",
+    h1: "Factory Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Factory solar panel cleaning in Ahmedabad for manufacturing plants and GIDC units. Remove soot and industrial dust. Maximize factory solar ROI.",
+    keywords: [
+      "factory solar panel cleaning Ahmedabad",
+      "industrial solar cleaning Ahmedabad",
+      "manufacturing plant solar cleaning Ahmedabad",
+      "commercial solar panel cleaning Ahmedabad",
+    ],
+    image: "/images/service/Service_3.avif",
+    intro:
+      "Factories in Naroda, Vatva, Odhav, Changodar and Sanand face the heaviest soiling in Ahmedabad — soot, metal dust and process emissions. Factory solar panel cleaning from Yavix is built for manufacturing plants: weekly/bi-weekly cadence options, PPE-compliant crews and deep cleans that recover lost kWh on industrial rooftops and ground mounts.",
+    benefits: [
+      "Industrial soot & dust specialty",
+      "Weekly cleaning programs available",
+      "GIDC / factory safety compliance",
+      "Large kW to multi-MW capability",
+      "Plant-manager AMC with visit logs",
+    ],
+    process: [
+      { step: "Plant Coordination", desc: "Align with EHS and maintenance around production." },
+      { step: "Soiling Assessment", desc: "Identify soot, grease film and bird dropping hotspots." },
+      { step: "Industrial Deep Clean", desc: "Multi-pass wash suitable for heavy industrial soiling." },
+      { step: "Generation Log", desc: "Track recovery and lock AMC frequency." },
+    ],
+    industries: ["Manufacturing plants", "Textile units", "Pharma", "Auto ancillaries", "Chemical units"],
+    faqs: [
+      { question: "Is factory cleaning different from office cleaning?", answer: "Yes. Factories need more frequent visits and deeper cleaning for soot and industrial particulates." },
+      { question: "Do you serve Vatva and Naroda GIDC?", answer: "Yes. These are core industrial service zones for Yavix." },
+    ],
+    group: "commercial",
   },
 ];
 
@@ -229,4 +491,12 @@ export function getServiceBySlug(slug: string) {
 
 export function getServiceSlugs() {
   return SEO_SERVICES.map((s) => s.slug);
+}
+
+export function getCoreServices() {
+  return SEO_SERVICES.filter((s) => s.group !== "commercial");
+}
+
+export function getCommercialServices() {
+  return SEO_SERVICES.filter((s) => s.group === "commercial");
 }

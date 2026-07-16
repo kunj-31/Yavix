@@ -3,6 +3,8 @@ import BlogsClient from "./BlogsClient";
 import { getAllBlogs } from "@/lib/db/blogs";
 import { SITE_URL, BRAND_NAME } from "@/lib/seo/config";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: `Solar Cleaning Blog – Tips & Insights | ${BRAND_NAME}`,
   description:
@@ -11,6 +13,19 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const blogs = await getAllBlogs();
+  const rows = await getAllBlogs();
+  const blogs = rows.map((b) => ({
+    slug: b.slug,
+    category: b.category,
+    readTime: b.readTime,
+    author: b.author,
+    date: b.date,
+    title: b.title,
+    excerpt: b.excerpt,
+    color: b.color,
+    emoji: b.emoji,
+    tags: b.tags,
+    content: b.content,
+  }));
   return <BlogsClient blogs={blogs} />;
 }

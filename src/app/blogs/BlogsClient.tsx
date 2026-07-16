@@ -3,17 +3,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, Tag, User } from "lucide-react";
+import type { BlogPost } from "@/lib/blogs";
 
-const blogs = [
-  { slug: "why-solar-cleaning-matters", category: "Education", readTime: "4 min", author: "Yavix Team", date: "May 2025", title: "Why Solar Cleaning Matters More Than You Think", excerpt: "Most solar owners never clean their panels — and they're losing up to 30% of their energy output every single day. Here's the science behind why cleaning is critical for every solar installation in Gujarat.", color: "from-blue-500 to-primary-600", emoji: "☀️", tags: ["Cleaning", "Efficiency", "Basics"] },
-  { slug: "solar-efficiency-tips", category: "Tips & Tricks", readTime: "5 min", author: "Yavix Team", date: "April 2025", title: "10 Solar Efficiency Tips to Maximize Your Panel Output", excerpt: "Beyond cleaning, there are practical steps every solar owner can take to squeeze maximum efficiency from their system — panel orientation, monitoring tools, shade management, and more.", color: "from-cyan-500 to-teal-500", emoji: "⚡", tags: ["Efficiency", "Optimization", "Tips"] },
-  { slug: "dust-impact-solar-panels", category: "Research", readTime: "6 min", author: "Yavix Research", date: "March 2025", title: "The Real Impact of Dust on Solar Panels in Gujarat", excerpt: "Gujarat's dry climate means panels accumulate dust faster than most regions. We analysed real output data from 50 Ahmedabad installations to show exactly how much dust costs you in rupees per month.", color: "from-amber-500 to-orange-500", emoji: "🌫️", tags: ["Dust", "Gujarat", "Data"] },
-  { slug: "solar-maintenance-guide", category: "Guide", readTime: "8 min", author: "Yavix Team", date: "February 2025", title: "The Complete Solar Panel Maintenance Guide for 2025", excerpt: "A comprehensive guide covering inspection schedules, cleaning frequency, inverter health, battery care, and how to identify early signs of panel degradation before they cost you money.", color: "from-green-500 to-cyan-500", emoji: "🔧", tags: ["Maintenance", "Guide", "Inverter"] },
-  { slug: "monsoon-solar-tips", category: "Seasonal", readTime: "4 min", author: "Yavix Team", date: "January 2025", title: "Preparing Your Solar Panels for Gujarat Monsoon Season", excerpt: "Monsoon can be great for natural cleaning — but it can also leave behind algae, hard water stains, and sediment. Here's how to prepare and what to do after the rains.", color: "from-teal-500 to-blue-500", emoji: "🌧️", tags: ["Monsoon", "Seasonal", "Gujarat"] },
-  { slug: "choosing-solar-cleaner", category: "Buyer's Guide", readTime: "5 min", author: "Yavix Team", date: "December 2024", title: "How to Choose the Right Solar Cleaning Service in Ahmedabad", excerpt: "Not all solar cleaning companies are equal. We share exactly what to look for — equipment, water quality, experience, pricing, and red flags to avoid when hiring a cleaning service.", color: "from-rose-500 to-pink-500", emoji: "🔍", tags: ["Hiring", "Tips", "Ahmedabad"] },
-];
-
-export default function BlogsClient() {
+export default function BlogsClient({ blogs }: { blogs: BlogPost[] }) {
+  if (blogs.length === 0) return null;
   return (
     <div className="pt-20">
       {/* Hero */}

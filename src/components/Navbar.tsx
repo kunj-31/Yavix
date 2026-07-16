@@ -4,10 +4,21 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Zap, ChevronDown } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "/#services" },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "All Services", href: "/services" },
+      { label: "Residential Cleaning", href: "/services/residential-solar-panel-cleaning" },
+      { label: "Commercial Cleaning", href: "/services/commercial-solar-panel-cleaning" },
+      { label: "Industrial Cleaning", href: "/services/industrial-solar-panel-cleaning" },
+      { label: "Solar AMC", href: "/services/solar-panel-amc" },
+    ],
+  },
+  { label: "Locations", href: "/locations" },
   { label: "Products", href: "/products" },
   { label: "Case Studies", href: "/case-study" },
   { label: "Blogs", href: "/blogs" },
@@ -22,6 +33,7 @@ const WA_MSG = encodeURIComponent(
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
   const isSolid = true;
 
@@ -53,8 +65,12 @@ export default function Navbar() {
     ? "text-slate-700 hover:bg-primary-50"
     : "text-white hover:bg-white/20";
 
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname.startsWith(href));
+
   useEffect(() => {
     setMenuOpen(false);
+    setServicesOpen(false);
   }, [pathname]);
 
   return (
@@ -68,14 +84,49 @@ export default function Navbar() {
               <img
                 src={isSolid ? "/images/logos/Logo.avif" : "/images/logos/Logo%20w%20R%20white.png"}
                 alt="Yavix Solar Cleaning"
-                className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 sm:h-12 md:h-14 lg:h-16"
+                className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105 sm:h-8 md:h-10 lg:h-12"
               />
             </Link>
 
             <nav className="hidden items-center gap-1 md:flex">
-              {navLinks.map((link, index) => {
-                const active = pathname === link.href;
+              {navLinks.map((link) => {
+                if (link.children) {
+                  const active = isActive(link.href);
+                  return (
+                    <div
+                      key={link.href}
+                      className="relative group"
+                      onMouseEnter={() => setServicesOpen(true)}
+                      onMouseLeave={() => setServicesOpen(false)}
+                    >
+                      <Link
+                        href={link.href}
+                        className={`group relative px-4 py-2 text-[14px] font-medium transition-colors duration-200 inline-flex items-center gap-1 ${getLinkClassName(active)}`}
+                      >
+                        {link.label}
+                        <ChevronDown className="h-3.5 w-3.5" />
+                        <span
+                          className={`absolute bottom-0 left-4 right-4 h-[2px] rounded-full transition-all duration-300 ${getLinkBarClassName(active)}`}
+                        />
+                      </Link>
+                      <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                        <div className="w-56 rounded-xl bg-white border border-gray-100 shadow-xl py-2">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
 
+                const active = isActive(link.href);
                 return (
                   <Link
                     key={link.href}
@@ -120,40 +171,41 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -30,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -30,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 130,
-              damping: 18,
-            }}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ type: "spring", stiffness: 130, damping: 18 }}
             className="fixed inset-x-0 top-[72px] z-[99] bg-white shadow-2xl border-t border-slate-100 md:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
           >
-
             <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
-                    pathname === link.href
-                      ? "bg-primary-50 text-primary-600"
-                      : "text-gray-700 hover:bg-gray-50"
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                <div key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
+                      isActive(link.href)
+                        ? "bg-primary-50 text-primary-600"
+                        : "text-gray-700 hover:bg-gray-50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.children && (
+                    <div className="ml-4 mb-2">
+                      {link.children.slice(1).map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setMenuOpen(false)}
+                          className="block px-4 py-2 text-sm text-gray-500 hover:text-primary-600"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <a
                 href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}

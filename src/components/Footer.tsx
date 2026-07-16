@@ -1,73 +1,66 @@
 import Link from "next/link";
-import { Zap, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
-import { footer, label } from "framer-motion/client";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { SEO_SERVICES } from "@/lib/seo/services";
+import { getAhmedabadLocations, locationPageSlug } from "@/lib/seo/locations";
 
 const WA_NUMBER = "919274371058";
 const WA_MSG = encodeURIComponent("Hello Yavix Solar Cleaning! I'd like to get a solar cleaning quote.");
+
+const topLocations = getAhmedabadLocations().slice(0, 8);
 
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-12">
-          {/* ── Brand ── */}
-          <div className="md:col-span-4 lg:col-span-4 mb-4 md:mb-6 pr-6">
+          <div className="md:col-span-4 lg:col-span-3 mb-4 md:mb-6 pr-6">
             <Link href="/" className="flex items-center mb-2">
               <img src="/images/logos/Logo.avif" alt="Yavix Solar Cleaning" loading="lazy" className="h-12 sm:h-14 w-auto object-contain" />
             </Link>
-
             <p className="text-[14px] text-gray-600 leading-7 text-justify">
-              Ahmedabad's most trusted solar panel cleaning company. As dedicated professional solar panel cleaning specialists, we restore efficiency and maximize energy output through expert cleaning services for residential, commercial, and industrial properties.
+              Ahmedabad&apos;s most trusted solar panel cleaning company. Professional solar panel cleaning services for residential, commercial, and industrial properties across Gujarat.
             </p>
           </div>
 
-          {/* ── Services ── */}
-          <div className="md:col-span-3 lg:col-span-3 mb-4 md:mb-6">
+          <div className="md:col-span-2 lg:col-span-2 mb-4 md:mb-6">
             <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
               Services
             </h3>
             <ul className="space-y-2 md:space-y-3">
-              {[
-                "Residential Solar Cleaning",
-                "Commercial Solar Cleaning",
-                "Industrial Solar Cleaning",
-                "Utility-Scale Solar Farm Cleaning",
-                "Salt & Mineral Deposit Removal",
-                "Annual Cleaning Contracts (ACC)"
-              ].map((s) => (
-                <li key={s}>
-                  <Link href="/#services" className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
-                    {s}
+              {SEO_SERVICES.slice(0, 6).map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/services/${s.slug}`} className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                    {s.h1}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/services" className="text-sm text-primary-600 font-semibold hover:underline">
+                  All Services →
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* ── Quick Links ── */}
-          <div className="md:col-span-2 lg:col-span-2 mb-4 md:mb-6">
-            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 md:space-y-3">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about" },
-                { label: "Products", href: "/products" },
-                { label: "Case Studies", href: "/case-study" },
-                { label: "Blogs", href: "/blogs" },
-              ].map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ── Contact Info ── */}
           <div className="md:col-span-3 lg:col-span-3 mb-4 md:mb-6">
+            <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
+              Service Areas
+            </h3>
+            <ul className="space-y-2 md:space-y-3 columns-2">
+              {topLocations.map((l) => (
+                <li key={l.slug}>
+                  <Link href={`/${locationPageSlug(l.slug)}`} className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                    {l.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/locations" className="text-sm text-primary-600 font-semibold hover:underline mt-3 inline-block">
+              All Locations →
+            </Link>
+          </div>
+
+          <div className="md:col-span-3 lg:col-span-4 mb-4 md:mb-6">
             <h3 className="text-[13px] font-semibold text-gray-900 uppercase tracking-wider mb-2.5 md:mb-4">
               Contact Us
             </h3>
@@ -107,16 +100,19 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
         </div>
 
-        {/* ── Bottom Bar ── */}
-        <div className="mt-6 sm:mt-12 pt-6 border-t border-gray-200 flex justify-start items-center">
-          <p className="text-xs sm:text-sm text-gray-400 text-left">
+        <div className="mt-6 sm:mt-12 pt-6 border-t border-gray-200 flex flex-wrap justify-between items-center gap-4">
+          <p className="text-xs sm:text-sm text-gray-400">
             © 2026 Yavix Solar Cleaning. All Rights Reserved.
           </p>
+          <div className="flex gap-4 text-xs text-gray-400">
+            <Link href="/blogs" className="hover:text-primary-600">Blog</Link>
+            <Link href="/about" className="hover:text-primary-600">About</Link>
+            <Link href="/contact" className="hover:text-primary-600">Contact</Link>
+          </div>
         </div>
       </div>
-    </footer >
+    </footer>
   );
 }

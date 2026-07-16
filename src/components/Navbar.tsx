@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Zap, ChevronDown } from "lucide-react";
 
 const navLinks = [
@@ -217,8 +218,9 @@ export default function Navbar() {
                 Book Cleaning
               </a>
             </nav>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

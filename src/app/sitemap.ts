@@ -62,13 +62,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const blogs = await getAllBlogs();
-  const blogRoutes: MetadataRoute.Sitemap = blogs.map((b) => ({
-    url: `${baseUrl}/blogs/${b.slug}`,
-    lastModified: new Date(b.updatedAt ?? b.publishedAt ?? now),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const blogs = await getAllBlogs();
+    blogRoutes = blogs.map((b) => ({
+      url: `${baseUrl}/blogs/${b.slug}`,
+      lastModified: new Date(b.updatedAt ?? b.publishedAt ?? now),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  } catch (e) {
+    console.error("sitemap blogs error", e);
+  }
 
   return [
     ...staticRoutes,

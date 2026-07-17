@@ -46,6 +46,11 @@ export const metadata: Metadata = {
   verification: {
     google: "zB2RMBmCa5VRg61wU4Mv6qJzoNHM48VBIRrLYQizMQI",
   },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

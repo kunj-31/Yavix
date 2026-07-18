@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingContactButtons from "@/components/FloatingContactButtons";
 import { CartProvider } from "@/context/CartContext";
 import SmoothScroll from "@/components/SmoothScroll";
 import {
@@ -106,6 +107,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <FloatingContactButtons />
           </CartProvider>
         </SmoothScroll>
       </body>

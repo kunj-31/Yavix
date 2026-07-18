@@ -1,4 +1,4 @@
-import { Zap, MessageCircle, ClipboardCheck, Phone } from "lucide-react";
+import { Zap, ClipboardCheck } from "lucide-react";
 import { waLink } from "@/lib/seo/config";
 
 interface SeoCtaSectionProps {
@@ -10,8 +10,6 @@ export default function SeoCtaSection({ areaName, serviceName }: SeoCtaSectionPr
   const context = areaName ?? serviceName ?? "Ahmedabad";
   const inspectionMsg = `Hello Yavix! I'd like to book a free solar inspection in ${context}.`;
   const quoteMsg = `Hello Yavix! I'd like an instant solar cleaning quote for ${context}.`;
-  const amcMsg = `Hello Yavix! I'd like AMC pricing for solar panel cleaning in ${context}.`;
-  const waMsg = `Hello Yavix! I need solar panel cleaning in ${context}.`;
 
   const ctas = [
     {
@@ -26,18 +24,6 @@ export default function SeoCtaSection({ areaName, serviceName }: SeoCtaSectionPr
       icon: Zap,
       style: "bg-white text-primary-600 border-2 border-primary-500 hover:bg-primary-50",
     },
-    {
-      label: "WhatsApp Now",
-      href: waLink(waMsg),
-      icon: MessageCircle,
-      style: "bg-[#16a34a] text-white hover:bg-[#15803d] shadow-lg shadow-green-500/20",
-    },
-    {
-      label: "Request AMC Pricing",
-      href: waLink(amcMsg),
-      icon: Phone,
-      style: "bg-slate-800 text-white hover:bg-slate-900",
-    },
   ];
 
   return (
@@ -48,14 +34,14 @@ export default function SeoCtaSection({ areaName, serviceName }: SeoCtaSectionPr
       <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
         Book professional solar panel cleaning in {context}. Fast response, transparent pricing, 200+ happy clients.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-xl mx-auto">
         {ctas.map((cta) => (
           <a
             key={cta.label}
             href={cta.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`flex items-center justify-center gap-2 rounded-xl px-5 py-4 text-sm font-semibold transition-all active:scale-95 ${cta.style}`}
+            className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-5 py-4 text-sm font-semibold transition-all active:scale-95 ${cta.style}`}
           >
             <cta.icon className="h-4 w-4 shrink-0" />
             {cta.label}

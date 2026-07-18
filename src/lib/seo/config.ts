@@ -2,6 +2,8 @@ export const SITE_URL = "https://yavixenergy.com";
 export const SITE_NAME = "Yavix Energy";
 export const BRAND_NAME = "Yavix Solar Cleaning";
 export const WA_NUMBER = "919274371058";
+/** Digits only for tel: links (opens native dialer) */
+export const PHONE_TEL = "+919274371058";
 
 export const BUSINESS = {
   name: BRAND_NAME,
@@ -27,7 +29,24 @@ export function waLink(message: string) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+/** Core money + user-requested keywords for homepage / global meta */
 export const PRIMARY_KEYWORDS = [
+  "Solar Panel Cleaning Services",
+  "Solar Panel Cleaning Ahmedabad",
+  "Professional Solar Panel Cleaning",
+  "Industrial Solar Panel Cleaning",
+  "Commercial Solar Panel Cleaning",
+  "Solar Panel Maintenance",
+  "Solar Cleaning Company",
+  "Solar Panel Washing",
+  "Solar Farm Cleaning",
+  "Solar Plant Cleaning",
+  "Solar AMC Services",
+  "Solar Panel Cleaning Gujarat",
+  "Factory Solar Panel Cleaning",
+  "Rooftop Solar Panel Cleaning",
+  "Solar Maintenance Services",
+  "Annual Solar Panel Cleaning",
   "solar panel cleaning Ahmedabad",
   "solar panel cleaning service Ahmedabad",
   "solar cleaning Ahmedabad",

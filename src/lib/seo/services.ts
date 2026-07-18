@@ -22,6 +22,12 @@ export const SEO_SERVICES: SeoService[] = [
     metaDescription:
       "Professional solar panel cleaning services in Ahmedabad for residential, commercial, industrial and solar farm installations. Improve efficiency, reduce bills. Book free inspection.",
     keywords: [
+      "Solar Panel Cleaning Services",
+      "Solar Panel Cleaning Ahmedabad",
+      "Professional Solar Panel Cleaning",
+      "Solar Panel Washing",
+      "Solar Cleaning Company",
+      "Solar Panel Cleaning Gujarat",
       "solar panel cleaning Ahmedabad",
       "solar panel cleaning service Ahmedabad",
       "professional solar panel cleaning Ahmedabad",
@@ -58,7 +64,14 @@ export const SEO_SERVICES: SeoService[] = [
     h1: "Residential Solar Panel Cleaning in Ahmedabad",
     metaDescription:
       "Home, villa, apartment and society solar panel cleaning in Ahmedabad. Safe rooftop cleaning with demineralized water. Book your residential solar wash today.",
-    keywords: ["residential solar panel cleaning Ahmedabad", "home solar panel cleaning Ahmedabad", "villa solar panel cleaning Ahmedabad", "society solar panel cleaning Ahmedabad"],
+    keywords: [
+      "Rooftop Solar Panel Cleaning",
+      "residential solar panel cleaning Ahmedabad",
+      "home solar panel cleaning Ahmedabad",
+      "villa solar panel cleaning Ahmedabad",
+      "society solar panel cleaning Ahmedabad",
+      "Solar Panel Cleaning Services",
+    ],
     image: "/images/service/Service_1.avif",
     intro: "Keep your home solar system performing at peak output with Yavix residential solar panel cleaning in Ahmedabad. We service villas, bungalows, apartments, row houses, farmhouses and housing societies across Satellite, Bopal, Maninagar, Nikol, Naroda and all major areas.",
     benefits: ["Safe cleaning without standing on panels", "Ideal for 3–20 kW home systems", "Removes bird droppings and calcification", "Morning/evening scheduling to avoid thermal shock", "AMC plans for hassle-free maintenance"],
@@ -81,6 +94,7 @@ export const SEO_SERVICES: SeoService[] = [
     metaDescription:
       "Commercial solar panel cleaning in Ahmedabad for offices, hospitals, schools, malls, hotels and warehouses. Enterprise scheduling and AMC. Get a quote.",
     keywords: [
+      "Commercial Solar Panel Cleaning",
       "commercial solar panel cleaning Ahmedabad",
       "office solar panel cleaning Ahmedabad",
       "hospital solar panel cleaning Ahmedabad",
@@ -89,6 +103,7 @@ export const SEO_SERVICES: SeoService[] = [
       "warehouse solar panel cleaning Ahmedabad",
       "hotel solar panel cleaning Ahmedabad",
       "factory solar panel cleaning Ahmedabad",
+      "Rooftop Solar Panel Cleaning",
     ],
     image: "/images/service/Service_2.avif",
     intro:
@@ -114,7 +129,16 @@ export const SEO_SERVICES: SeoService[] = [
     h1: "Industrial Solar Panel Cleaning in Ahmedabad",
     metaDescription:
       "Factory, manufacturing plant and warehouse solar cleaning in Ahmedabad GIDC areas. Remove industrial soot and dust. Maximize industrial solar ROI.",
-    keywords: ["industrial solar cleaning Ahmedabad", "factory solar panel cleaning Ahmedabad", "manufacturing plant solar cleaning Ahmedabad", "warehouse solar cleaning Ahmedabad"],
+    keywords: [
+      "Industrial Solar Panel Cleaning",
+      "Factory Solar Panel Cleaning",
+      "industrial solar cleaning Ahmedabad",
+      "factory solar panel cleaning Ahmedabad",
+      "manufacturing plant solar cleaning Ahmedabad",
+      "warehouse solar cleaning Ahmedabad",
+      "Solar Panel Maintenance",
+      "Solar Maintenance Services",
+    ],
     image: "/images/service/Service_3.avif",
     intro: "Industrial zones in Naroda, Vatva, Odhav, Changodar and Sanand accumulate heavy soot, metal dust and pollution that rapidly reduce solar output. Yavix industrial solar panel cleaning is built for factories, manufacturing plants, textile units and large warehouses.",
     benefits: ["Handles heavy industrial soiling", "Large MW-scale capability", "Rapid turnaround for production sites", "Salt and mineral deposit treatment", "Dedicated AMC for GIDC clients"],
@@ -135,7 +159,15 @@ export const SEO_SERVICES: SeoService[] = [
     h1: "Solar Farm & Utility-Scale Cleaning",
     metaDescription:
       "Utility-scale and solar farm cleaning across Ahmedabad and Gujarat. Large-array specialists for ground-mount and tracker systems.",
-    keywords: ["solar farm cleaning Ahmedabad", "utility scale solar cleaning Gujarat", "ground mount solar cleaning"],
+    keywords: [
+      "Solar Farm Cleaning",
+      "Solar Plant Cleaning",
+      "solar farm cleaning Ahmedabad",
+      "utility scale solar cleaning Gujarat",
+      "ground mount solar cleaning",
+      "solar plant cleaning Ahmedabad",
+      "solar plant cleaning Gujarat",
+    ],
     image: "/images/service/Service_4.avif",
     intro: "Utility-scale solar farms demand systematic, high-volume cleaning programs. Yavix supports ground-mount arrays, tracker systems and large rooftop plants across Ahmedabad district and Gujarat with scalable crews and equipment.",
     benefits: ["Ground-mount and tracker expertise", "Scalable team deployment", "Seasonal and AMC programs", "Dust storm recovery cleaning", "Minimal downtime planning"],
@@ -156,7 +188,16 @@ export const SEO_SERVICES: SeoService[] = [
     h1: "Solar Panel AMC in Ahmedabad",
     metaDescription:
       "Solar panel annual maintenance contract (AMC) in Ahmedabad. Scheduled cleaning, inspection and performance care. Request AMC pricing today.",
-    keywords: ["solar AMC Ahmedabad", "solar panel annual maintenance contract Ahmedabad", "solar maintenance company Ahmedabad"],
+    keywords: [
+      "Solar AMC Services",
+      "Annual Solar Panel Cleaning",
+      "Solar Panel Maintenance",
+      "Solar Maintenance Services",
+      "solar AMC Ahmedabad",
+      "solar panel annual maintenance contract Ahmedabad",
+      "solar maintenance company Ahmedabad",
+      "annual solar panel cleaning Ahmedabad",
+    ],
     image: "/images/service/Service_5.avif",
     intro: "A solar panel AMC with Yavix ensures your system stays clean, efficient and protected year-round. Our Annual Maintenance Contracts include scheduled cleaning visits, inspection checks and priority support for residential, commercial and industrial clients across Ahmedabad.",
     benefits: ["Fixed annual pricing", "Priority scheduling", "Regular cleaning calendar", "Inspection with each visit", "Discounted emergency call-outs"],
@@ -455,10 +496,12 @@ export const SEO_SERVICES: SeoService[] = [
     metaDescription:
       "Factory solar panel cleaning in Ahmedabad for manufacturing plants and GIDC units. Remove soot and industrial dust. Maximize factory solar ROI.",
     keywords: [
+      "Factory Solar Panel Cleaning",
       "factory solar panel cleaning Ahmedabad",
       "industrial solar cleaning Ahmedabad",
       "manufacturing plant solar cleaning Ahmedabad",
       "commercial solar panel cleaning Ahmedabad",
+      "Industrial Solar Panel Cleaning",
     ],
     image: "/images/service/Service_3.avif",
     intro:
@@ -482,6 +525,118 @@ export const SEO_SERVICES: SeoService[] = [
       { question: "Do you serve Vatva and Naroda GIDC?", answer: "Yes. These are core industrial service zones for Yavix." },
     ],
     group: "commercial",
+  },
+
+  // Extra keyword landing pages (user-requested)
+  {
+    slug: "rooftop-solar-panel-cleaning",
+    title: "Rooftop Solar Panel Cleaning in Ahmedabad",
+    h1: "Rooftop Solar Panel Cleaning in Ahmedabad",
+    metaDescription:
+      "Rooftop solar panel cleaning in Ahmedabad for homes, societies and commercial buildings. Safe terrace cleaning with demineralized water. Book today.",
+    keywords: [
+      "Rooftop Solar Panel Cleaning",
+      "rooftop solar panel cleaning Ahmedabad",
+      "terrace solar cleaning Ahmedabad",
+      "Solar Panel Cleaning Services",
+      "Professional Solar Panel Cleaning",
+    ],
+    image: "/images/service/Service_1.avif",
+    intro:
+      "Most solar systems in Ahmedabad are rooftop-mounted. Yavix specializes in rooftop solar panel cleaning with harness-safe access, soft brushes and demineralized water — protecting panels, roofs and warranties while restoring generation for homes, societies and commercial terraces across Gujarat.",
+    benefits: [
+      "Safe rooftop / terrace access methods",
+      "No standing on solar modules",
+      "Ideal for 3–500 kW rooftop plants",
+      "Scratch-free purified water wash",
+      "Residential & commercial rooftop AMC",
+    ],
+    process: [
+      { step: "Roof Access Check", desc: "Assess terrace access, parapets and safety anchors." },
+      { step: "Safe Setup", desc: "Harnesses and soft equipment ready for rooftop work." },
+      { step: "Rooftop Clean", desc: "Full array wash without damaging waterproofing or panels." },
+      { step: "Handover", desc: "Photos and recommended rooftop cleaning frequency." },
+    ],
+    industries: ["Home rooftops", "Housing societies", "Office terraces", "Hospital roofs", "Factory sheds"],
+    faqs: [
+      { question: "Is rooftop cleaning safe for my building?", answer: "Yes. We use safety harnesses and never stand on panels or damage terrace waterproofing." },
+      { question: "How often should rooftop panels be cleaned in Ahmedabad?", answer: "Every 10–14 days for most homes; weekly near industrial dust zones." },
+    ],
+    group: "core",
+  },
+  {
+    slug: "solar-panel-cleaning-gujarat",
+    title: "Solar Panel Cleaning Gujarat | Statewide Service",
+    h1: "Solar Panel Cleaning in Gujarat",
+    metaDescription:
+      "Solar panel cleaning Gujarat — Ahmedabad hub serving Sanand, Kalol, Gandhinagar, Mehsana and industrial GIDC belts. Professional solar washing & AMC.",
+    keywords: [
+      "Solar Panel Cleaning Gujarat",
+      "solar panel cleaning Gujarat",
+      "solar cleaning Gujarat",
+      "Solar Panel Cleaning Services",
+      "Professional Solar Panel Cleaning",
+      "Solar Cleaning Company",
+    ],
+    image: "/images/service/Service_2.avif",
+    intro:
+      "Yavix Energy provides solar panel cleaning across Gujarat from our Ahmedabad base — covering residential, commercial, industrial and solar plant sites in Ahmedabad district, Sanand, Changodar, Kalol, Kadi, Gandhinagar, Mehsana and major GIDC corridors. Dust across Gujarat’s dry climate makes professional solar panel washing and AMC essential for ROI.",
+    benefits: [
+      "Statewide Gujarat coverage from Ahmedabad",
+      "Industrial GIDC specialty teams",
+      "Residential, commercial & utility plants",
+      "Solar AMC across Gujarat sites",
+      "Demineralized water cleaning standard",
+    ],
+    process: [
+      { step: "Site Survey", desc: "Confirm location, kW size and soiling type across Gujarat." },
+      { step: "Crew Dispatch", desc: "Deploy trained team to your city or GIDC." },
+      { step: "Professional Wash", desc: "Scratch-free cleaning with purified water." },
+      { step: "AMC Option", desc: "Schedule recurring Gujarat-wide maintenance." },
+    ],
+    industries: ["Ahmedabad", "Sanand", "Kalol", "Gandhinagar", "Mehsana", "GIDC plants"],
+    faqs: [
+      { question: "Do you clean outside Ahmedabad city?", answer: "Yes. We serve Gujarat industrial belts and nearby cities including Sanand, Kalol, Kadi and Gandhinagar." },
+      { question: "Can factories in GIDC get AMC?", answer: "Yes. Industrial AMC is available for GIDC and manufacturing sites across Gujarat." },
+    ],
+    group: "core",
+  },
+  {
+    slug: "solar-plant-cleaning",
+    title: "Solar Plant Cleaning in Ahmedabad & Gujarat",
+    h1: "Solar Plant Cleaning Services",
+    metaDescription:
+      "Solar plant cleaning for ground-mount and large rooftop plants in Ahmedabad & Gujarat. Recover generation with professional solar plant washing & AMC.",
+    keywords: [
+      "Solar Plant Cleaning",
+      "solar plant cleaning Ahmedabad",
+      "solar plant cleaning Gujarat",
+      "Solar Farm Cleaning",
+      "Solar Panel Cleaning Services",
+      "utility scale solar cleaning",
+    ],
+    image: "/images/service/Service_4.avif",
+    intro:
+      "Solar plant cleaning requires systematic zone-by-zone washing for ground-mount parks and large commercial plants. Yavix delivers solar plant cleaning across Ahmedabad and Gujarat with scalable crews, dust-storm recovery cleans and plant AMC programs that protect IPP and captive power ROI.",
+    benefits: [
+      "Ground-mount and large plant expertise",
+      "Scalable multi-crew deployment",
+      "Dust storm recovery cleaning",
+      "Generation recovery documentation",
+      "Plant AMC calendars",
+    ],
+    process: [
+      { step: "Plant Mapping", desc: "Divide arrays into cleaning blocks." },
+      { step: "Mobilization", desc: "Deploy brushes, poles and water systems." },
+      { step: "Block Cleaning", desc: "Sequential plant cleaning with QC checks." },
+      { step: "Performance Report", desc: "Soiling removal notes and next schedule." },
+    ],
+    industries: ["Solar parks", "Captive plants", "Open access plants", "Ground-mount farms"],
+    faqs: [
+      { question: "Is solar plant cleaning different from home cleaning?", answer: "Yes. Plants need zone planning, larger crews and higher frequency in dusty Gujarat belts." },
+      { question: "Do you handle MW-scale plants?", answer: "Yes. Share your MW capacity and location for a custom plant cleaning plan." },
+    ],
+    group: "core",
   },
 ];
 

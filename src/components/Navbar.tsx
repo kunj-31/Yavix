@@ -5,21 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Zap, ChevronDown } from "lucide-react";
+import { NAV_SERVICE_LINKS } from "@/lib/seo/nav-services";
 
 const navLinks = [
   {
     label: "Services",
     href: "/services",
-    children: [
-      { label: "All Services", href: "/services" },
-      { label: "Residential Cleaning", href: "/services/residential-solar-panel-cleaning" },
-      { label: "Commercial Cleaning", href: "/services/commercial-solar-panel-cleaning" },
-      { label: "Office Cleaning", href: "/services/office-solar-panel-cleaning-ahmedabad" },
-      { label: "Hospital Cleaning", href: "/services/hospital-solar-panel-cleaning-ahmedabad" },
-      { label: "Factory Cleaning", href: "/services/factory-solar-panel-cleaning-ahmedabad" },
-      { label: "Industrial Cleaning", href: "/services/industrial-solar-panel-cleaning" },
-      { label: "Solar AMC", href: "/services/solar-panel-amc" },
-    ],
+    children: [...NAV_SERVICE_LINKS],
   },
   { label: "Locations", href: "/locations" },
   { label: "Products", href: "/products" },

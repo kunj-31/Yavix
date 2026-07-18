@@ -6,7 +6,7 @@ import WhyCleaningSection from "@/components/home/WhyCleaningSection";
 import WhyChooseYavixSection from "@/components/home/WhyChooseYavixSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ReviewsSection from "@/components/home/ReviewsSection";
-import { SITE_URL } from "@/lib/seo/config";
+import { SITE_URL, PRIMARY_KEYWORDS } from "@/lib/seo/config";
 import { getAhmedabadLocations, locationPageSlug } from "@/lib/seo/locations";
 import { SEO_SERVICES } from "@/lib/seo/services";
 import { faqSchema } from "@/lib/seo/schema";
@@ -15,18 +15,8 @@ export const metadata: Metadata = {
   title:
     "Solar Panel Cleaning Services in Ahmedabad | Residential, Commercial & Industrial | Yavix Energy",
   description:
-    "Professional solar panel cleaning services in Ahmedabad. Residential, commercial, industrial and solar farm cleaning. Improve efficiency and maximize energy output. Book today.",
-  keywords: [
-    "solar panel cleaning Ahmedabad",
-    "solar panel cleaning service Ahmedabad",
-    "solar cleaning Ahmedabad",
-    "solar panel washing Ahmedabad",
-    "solar panel maintenance Ahmedabad",
-    "solar AMC Ahmedabad",
-    "best solar panel cleaning company in Ahmedabad",
-    "professional solar panel cleaning Ahmedabad",
-    "solar panel cleaning near me",
-  ].join(", "),
+    "Professional solar panel cleaning services in Ahmedabad & Gujarat. Residential, commercial, industrial, rooftop, solar farm and AMC cleaning. Improve efficiency and maximize energy output. Book today.",
+  keywords: PRIMARY_KEYWORDS.join(", "),
   alternates: { canonical: SITE_URL },
   openGraph: {
     title:

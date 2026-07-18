@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { SEO_SERVICES } from "@/lib/seo/services";
+import { NAV_SERVICE_LINKS } from "@/lib/seo/nav-services";
 import { getAhmedabadLocations, locationPageSlug } from "@/lib/seo/locations";
 
 const WA_NUMBER = "919274371058";
 const WA_MSG = encodeURIComponent("Hello Yavix Solar Cleaning! I'd like to get a solar cleaning quote.");
 
 const topLocations = getAhmedabadLocations().slice(0, 8);
+const footerServices = NAV_SERVICE_LINKS.filter((l) => l.href !== "/services");
 
 export default function Footer() {
   return (
@@ -27,10 +28,10 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-2 md:space-y-3">
-              {SEO_SERVICES.slice(0, 6).map((s) => (
-                <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
-                    {s.h1}
+              {footerServices.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-sm text-gray-500 hover:text-primary-600 transition-colors">
+                    {s.label}
                   </Link>
                 </li>
               ))}

@@ -5,6 +5,7 @@ import {
   getLocationByPageSlug,
   buildLocationContent,
   buildLocationFaqs,
+  getLocationKeywords,
   type SeoLocation,
 } from "@/lib/seo/locations";
 import { SITE_URL, BRAND_NAME } from "@/lib/seo/config";
@@ -32,19 +33,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const location = getLocationByPageSlug(slug);
   if (!location) return { title: "Page Not Found" };
 
-  const title = `Solar Panel Cleaning ${location.name} | Best Service | ${BRAND_NAME}`;
-  const description = `Professional solar panel cleaning in ${location.name}. Residential, commercial & industrial solar cleaning service. Best solar panel cleaning company in ${location.name}. Book free inspection.`;
+  const aliasLabel = location.aliases?.[0];
+  const title = aliasLabel
+    ? `Solar Panel Cleaning ${location.name} & ${aliasLabel} | ${BRAND_NAME}`
+    : `Solar Panel Cleaning ${location.name} | Best Service | ${BRAND_NAME}`;
+  const description = `Professional solar panel cleaning in ${location.name}${aliasLabel ? ` (${aliasLabel})` : ""}. Residential, commercial & industrial solar cleaning service. Best solar panel cleaning company in ${location.name}. Book free inspection.`;
 
   return {
     title,
     description,
-    keywords: [
-      `solar panel cleaning ${location.name.toLowerCase()}`,
-      `solar panel cleaning service ${location.name.toLowerCase()}`,
-      `best solar panel cleaning ${location.name.toLowerCase()}`,
-      `professional solar panel cleaning ${location.name.toLowerCase()}`,
-      `solar AMC ${location.name.toLowerCase()}`,
-    ].join(", "),
+    keywords: getLocationKeywords(location).join(", "),
     alternates: { canonical: `${SITE_URL}/${slug}` },
     openGraph: {
       title,

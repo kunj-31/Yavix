@@ -148,9 +148,11 @@ export function getIndustrialLocations(zone?: SeoLocation["zone"]) {
 export function getLocationKeywords(location: SeoLocation): string[] {
   const name = location.name;
   const base = [
+    `solar panel cleaning in ${name}`,
+    `best solar panel cleaning in ${name}`,
     `solar panel cleaning ${name}`,
-    `solar panel cleaning service ${name}`,
-    `best solar panel cleaning ${name}`,
+    `solar panel cleaning service in ${name}`,
+    `best solar panel cleaning company in ${name}`,
     `professional solar panel cleaning ${name}`,
     `solar AMC ${name}`,
     `industrial solar panel cleaning ${name}`,
@@ -158,6 +160,7 @@ export function getLocationKeywords(location: SeoLocation): string[] {
   ];
   const aliasKw = (location.aliases ?? []).flatMap((a) => [
     `solar panel cleaning ${a}`,
+    `solar panel cleaning in ${a}`,
     `solar panel cleaning service ${a}`,
     `industrial solar cleaning ${a}`,
     `factory solar panel cleaning ${a}`,

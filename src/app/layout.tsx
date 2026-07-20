@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     template: `%s | ${BRAND_NAME}`,
   },
   description:
-    "Professional solar panel cleaning services in Ahmedabad. Improve solar efficiency with premium cleaning and maintenance for homes, offices, and industries.",
+    "Solar panel cleaning in Ahmedabad by Yavix Energy. Best professional solar panel cleaning for homes, offices and industries. Book free inspection.",
   keywords:
-    "solar panel cleaning, solar cleaning Ahmedabad, solar maintenance, solar AMC, solar efficiency, Yavix Energy",
+    "solar panel cleaning in Ahmedabad, best solar panel cleaning in Ahmedabad, solar cleaning Ahmedabad, solar AMC, Yavix Energy",
   openGraph: {
-    title: `${BRAND_NAME} – Solar Panel Cleaning Ahmedabad`,
+    title: `${BRAND_NAME} – Solar Panel Cleaning in Ahmedabad`,
     description:
-      "Professional solar panel cleaning services in Ahmedabad. Maximize efficiency with premium solar cleaning.",
+      "Best solar panel cleaning in Ahmedabad. Maximize efficiency with premium solar cleaning.",
     type: "website",
     locale: "en_IN",
     siteName: BRAND_NAME,

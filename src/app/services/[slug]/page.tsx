@@ -32,8 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(slug);
   if (!service) return { title: "Service Not Found" };
 
+  const isMoneyPage = slug === "solar-panel-cleaning-ahmedabad";
+  const fullTitle = isMoneyPage
+    ? `${service.title} | Yavix Energy`
+    : `${service.title} | ${BRAND_NAME}`;
+
   return {
-    title: `${service.title} | ${BRAND_NAME}`,
+    title: isMoneyPage ? { absolute: fullTitle } : fullTitle,
     description: service.metaDescription,
     keywords: service.keywords.join(", "),
     alternates: { canonical: `${SITE_URL}/services/${slug}` },
@@ -104,6 +109,29 @@ function ServiceContent({ service }: { service: SeoService }) {
 
             <div className="prose prose-lg max-w-none text-gray-600 space-y-6">
               <p className="text-lg leading-relaxed">{service.intro}</p>
+
+              {service.slug === "solar-panel-cleaning-ahmedabad" && (
+                <>
+                  <h2 className="text-2xl font-extrabold text-primary-900 mt-10">
+                    Why Choose Yavix for Solar Panel Cleaning in Ahmedabad
+                  </h2>
+                  <p>
+                    Searching for <strong>solar panel cleaning in Ahmedabad</strong> or the{" "}
+                    <strong>best solar panel cleaning in Ahmedabad</strong>? Yavix Energy focuses only
+                    on professional solar washing and maintenance — not equipment sales. That means
+                    faster response, trained cleaners, and methods that protect your panels. We serve
+                    residential rooftops, commercial buildings and industrial plants across Ahmedabad
+                    and nearby GIDC zones including Naroda, Vatva, Odhav, Changodar and Sanand.
+                  </p>
+                  <p>
+                    Our <strong>solar panel cleaning service in Ahmedabad</strong> uses demineralized
+                    water to avoid white stains, soft brushes to protect anti-reflective glass, and
+                    optional AMC plans so you never miss a cleaning cycle. Transparent quotes, before/
+                    after checks and WhatsApp booking make us a preferred solar cleaning company in
+                    Ahmedabad for homes and businesses.
+                  </p>
+                </>
+              )}
 
               <h2 className="text-2xl font-extrabold text-primary-900 mt-10">Key Benefits</h2>
               <ul className="space-y-3">

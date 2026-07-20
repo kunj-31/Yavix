@@ -36,11 +36,11 @@ export default function HeroSection() {
             className="mx-auto flex flex-col items-center gap-5 sm:gap-6"
           >
             <h1 className="max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Professional <span className="gradient-text font-extrabold">Solar Panel</span> Cleaning Services in Ahmedabad
+              Solar Panel Cleaning in <span className="gradient-text font-extrabold">Ahmedabad</span>
             </h1>
 
             <p className="max-w-2xl text-sm leading-relaxed text-slate-100 sm:text-base lg:text-lg">
-              Improve solar efficiency with premium solar panel cleaning and maintenance solutions for homes, offices and industries.
+              Best professional solar panel cleaning for homes, offices and industries — restore efficiency, cut bills, book free inspection today.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-slate-100 sm:text-base">

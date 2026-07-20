@@ -29,8 +29,14 @@ export function waLink(message: string) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-/** Core money + user-requested keywords for homepage / global meta */
+/** Core money keywords — exact-match head terms first for ranking */
 export const PRIMARY_KEYWORDS = [
+  "solar panel cleaning in Ahmedabad",
+  "best solar panel cleaning in Ahmedabad",
+  "solar panel cleaning Ahmedabad",
+  "best solar panel cleaning company in Ahmedabad",
+  "solar panel cleaning service in Ahmedabad",
+  "professional solar panel cleaning Ahmedabad",
   "Solar Panel Cleaning Services",
   "Solar Panel Cleaning Ahmedabad",
   "Professional Solar Panel Cleaning",
@@ -47,12 +53,8 @@ export const PRIMARY_KEYWORDS = [
   "Rooftop Solar Panel Cleaning",
   "Solar Maintenance Services",
   "Annual Solar Panel Cleaning",
-  "solar panel cleaning Ahmedabad",
-  "solar panel cleaning service Ahmedabad",
   "solar cleaning Ahmedabad",
   "solar panel washing Ahmedabad",
   "solar panel maintenance Ahmedabad",
   "solar AMC Ahmedabad",
-  "professional solar panel cleaning Ahmedabad",
-  "best solar panel cleaning company in Ahmedabad",
 ];

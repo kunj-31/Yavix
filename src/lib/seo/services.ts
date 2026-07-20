@@ -17,26 +17,29 @@ export interface SeoService {
 export const SEO_SERVICES: SeoService[] = [
   {
     slug: "solar-panel-cleaning-ahmedabad",
-    title: "Professional Solar Panel Cleaning Services in Ahmedabad",
-    h1: "Solar Panel Cleaning Services in Ahmedabad",
+    title: "Solar Panel Cleaning in Ahmedabad | Best Professional Service",
+    h1: "Best Solar Panel Cleaning in Ahmedabad",
     metaDescription:
-      "Professional solar panel cleaning services in Ahmedabad for residential, commercial, industrial and solar farm installations. Improve efficiency, reduce bills. Book free inspection.",
+      "Solar panel cleaning in Ahmedabad by Yavix Energy — the best solar panel cleaning company for homes, offices & industries. Demineralized water, 200+ clients. Book free inspection today.",
     keywords: [
+      "solar panel cleaning in Ahmedabad",
+      "best solar panel cleaning in Ahmedabad",
+      "solar panel cleaning Ahmedabad",
+      "best solar panel cleaning company in Ahmedabad",
+      "solar panel cleaning service in Ahmedabad",
+      "professional solar panel cleaning Ahmedabad",
       "Solar Panel Cleaning Services",
       "Solar Panel Cleaning Ahmedabad",
       "Professional Solar Panel Cleaning",
       "Solar Panel Washing",
       "Solar Cleaning Company",
       "Solar Panel Cleaning Gujarat",
-      "solar panel cleaning Ahmedabad",
-      "solar panel cleaning service Ahmedabad",
-      "professional solar panel cleaning Ahmedabad",
-      "best solar panel cleaning company in Ahmedabad",
       "solar cleaning Ahmedabad",
+      "solar panel washing Ahmedabad",
     ],
     image: "/images/service/Service_1.avif",
     intro:
-      "Yavix Energy provides professional solar panel cleaning services in Ahmedabad for homes, offices, factories, hospitals, schools, warehouses and large solar farms. Dust, pollution, bird droppings and hard water stains reduce solar output across Gujarat's dry climate. Our trained team uses demineralized water, soft microfiber brushes and safe telescopic equipment to restore panel performance without damaging anti-reflective coatings or voiding warranties.",
+      "Looking for solar panel cleaning in Ahmedabad? Yavix Energy is a trusted solar cleaning company providing the best solar panel cleaning in Ahmedabad for homes, offices, factories, hospitals, schools, warehouses and solar farms. Dust, pollution, bird droppings and hard water stains cut solar output across Gujarat's dry climate. Our trained crew uses demineralized water, soft microfiber brushes and safe telescopic equipment to restore panel performance without scratching coatings or voiding warranties — professional solar panel cleaning Ahmedabad clients rely on every week.",
     benefits: [
       "Restore up to 30% lost energy output from dust and soiling",
       "Scratch-free cleaning with industry-approved equipment",
@@ -44,6 +47,7 @@ export const SEO_SERVICES: SeoService[] = [
       "Flexible scheduling with minimal business disruption",
       "Before-and-after performance documentation",
       "Annual Maintenance Contracts (AMC) available",
+      "Same-day booking across Ahmedabad & nearby GIDC areas",
     ],
     process: [
       { step: "Free Site Inspection", desc: "We assess panel condition, soiling level, access and safety requirements." },
@@ -53,9 +57,11 @@ export const SEO_SERVICES: SeoService[] = [
     ],
     industries: ["Residential rooftops", "Offices & IT parks", "Hospitals & schools", "Hotels & malls", "Factories & warehouses", "Solar farms"],
     faqs: [
-      { question: "How often should solar panels be cleaned in Ahmedabad?", answer: "Most Ahmedabad sites need cleaning every 10–14 days. Industrial areas like Naroda, Vatva and Odhav may need weekly cleaning due to higher dust and pollution." },
-      { question: "What is the cost of solar panel cleaning in Ahmedabad?", answer: "Pricing depends on system size, roof access and frequency. Contact Yavix for an instant quote via WhatsApp — residential visits start affordably with AMC discounts available." },
-      { question: "Does cleaning solar panels increase output?", answer: "Yes. Studies show dirty panels in Gujarat can lose 20–35% efficiency. Professional cleaning removes soiling and helps panels generate closer to rated capacity." },
+      { question: "Who provides the best solar panel cleaning in Ahmedabad?", answer: "Yavix Energy is among the best solar panel cleaning companies in Ahmedabad, trusted by 200+ residential, commercial and industrial clients for demineralized-water cleaning, safety-certified crews and transparent pricing." },
+      { question: "How often should solar panels be cleaned in Ahmedabad?", answer: "Most Ahmedabad sites need solar panel cleaning every 10–14 days. Industrial areas like Naroda, Vatva, Odhav and Sanand GIDC may need weekly cleaning due to higher dust and pollution." },
+      { question: "What is the cost of solar panel cleaning in Ahmedabad?", answer: "Solar panel cleaning cost in Ahmedabad depends on system size, roof access and frequency. Contact Yavix on WhatsApp for an instant quote — AMC plans offer the best value for regular maintenance." },
+      { question: "Does solar panel cleaning in Ahmedabad increase output?", answer: "Yes. Dirty panels in Gujarat can lose 20–35% efficiency. Professional solar panel cleaning in Ahmedabad removes soiling and helps panels generate closer to rated capacity." },
+      { question: "Do you offer commercial and industrial solar panel cleaning in Ahmedabad?", answer: "Yes. Yavix provides residential, commercial, factory and industrial solar panel cleaning across Ahmedabad, including GIDC belts such as Naroda, Vatva, Changodar and Sanand." },
     ],
   },
   {

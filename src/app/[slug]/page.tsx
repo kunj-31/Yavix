@@ -33,11 +33,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const location = getLocationByPageSlug(slug);
   if (!location) return { title: "Page Not Found" };
 
+  // City-wide Ahmedabad page: consolidate ranking to homepage (avoid keyword cannibalization)
+  if (location.slug === "ahmedabad") {
+    const title = "Solar Panel Cleaning in Ahmedabad | Areas We Serve";
+    const description =
+      "Explore solar panel cleaning across Ahmedabad localities. For city-wide solar panel cleaning in Ahmedabad, see Yavix Energy's main service page and book a free inspection.";
+    return {
+      title: { absolute: `${title} | ${BRAND_NAME}` },
+      description,
+      keywords: getLocationKeywords(location).join(", "),
+      alternates: { canonical: SITE_URL },
+      openGraph: {
+        title,
+        description,
+        url: SITE_URL,
+        type: "website",
+      },
+      robots: { index: true, follow: true },
+    };
+  }
+
   const aliasLabel = location.aliases?.[0];
   const title = aliasLabel
     ? `Solar Panel Cleaning ${location.name} & ${aliasLabel} | ${BRAND_NAME}`
-    : `Solar Panel Cleaning ${location.name} | Best Service | ${BRAND_NAME}`;
-  const description = `Professional solar panel cleaning in ${location.name}${aliasLabel ? ` (${aliasLabel})` : ""}. Residential, commercial & industrial solar cleaning service. Best solar panel cleaning company in ${location.name}. Book free inspection.`;
+    : `Solar Panel Cleaning in ${location.name} | ${BRAND_NAME}`;
+  const description = `Solar panel cleaning in ${location.name}${aliasLabel ? ` (${aliasLabel})` : ""}. Residential, commercial & industrial solar cleaning by Yavix Energy. Book free inspection today.`;
 
   return {
     title,

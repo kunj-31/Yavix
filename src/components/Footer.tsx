@@ -79,14 +79,15 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-primary-500 mt-1 shrink-0" />
+                <MapPin className="w-4 h-4 text-primary-500 mt-0.5 shrink-0" />
                 <a
                   href="https://maps.google.com/?q=36,+Bhagyoday+Society,+Thakkarbapanagar+Road,+Ahmedabad,+Gujarat+382350"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-primary-600 transition-colors leading-relaxed"
                 >
-                  36, Bhagyoday Society, Thakkarbapanagar Road, <br />
+                  36, Bhagyoday Society, Thakkarbapanagar Road,
+                  <br />
                   Ahmedabad, Gujarat 382350
                 </a>
               </li>
@@ -108,16 +109,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 sm:mt-12 pt-6 border-t border-gray-200 flex flex-wrap justify-between items-center gap-4">
-          <p className="text-xs sm:text-sm text-gray-400">
+        <div className="mt-6 sm:mt-12 pt-6 border-t border-gray-200 flex justify-center items-center">
+          <p className="text-xs sm:text-sm text-gray-400 text-center">
             © 2026 Yavix Solar Cleaning. All Rights Reserved.
           </p>
-          <div className="flex gap-4 text-xs text-gray-400">
-            <Link href="/blogs" className="hover:text-primary-600">Blog</Link>
-            <Link href="/guides" className="hover:text-primary-600">Guides</Link>
-            <Link href="/about" className="hover:text-primary-600">About</Link>
-            <Link href="/contact" className="hover:text-primary-600">Contact</Link>
-          </div>
         </div>
       </div>
     </footer>
